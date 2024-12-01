@@ -1,9 +1,9 @@
 /* Style général */
 body {
-    font-family: Verdana, sans-serif;
+    font-family: verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: FBDB3B;
+    background-color: #f9f9f9;
     color: #333;
     line-height: 1.6;
 }
@@ -44,18 +44,67 @@ header nav a:hover {
     color: white;
 }
 
-/* Style des images miniatures */
-.thumbnail {
-    width: 150px; /* Largeur des miniatures */
-    height: 100px; /* Hauteur fixe pour un format cohérent */
-    object-fit: cover; /* Découpe l'image pour s'adapter à la taille */
+/* Section Accueil avec image de fond */
+#accueil {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 400px; /* Hauteur de la section */
+    background-image: url('./image_principale.jpg'); /* Image de fond */
+    background-size: cover; /* Couvre toute la section */
+    background-position: center; /* Centre l'image */
+    background-repeat: no-repeat;
+    filter: brightness(0.7); /* Réduit la luminosité pour un effet transparent */
+}
+
+#accueil h2,
+#accueil p {
+    position: relative;
+    color: white; /* Texte en blanc pour le contraste */
+    z-index: 1; /* S'assurer que le texte est au-dessus */
+}
+
+#accueil::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Couche de transparence */
+    z-index: 0; /* Derrière le texte */
+}
+
+/* Style du carrousel */
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 0;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 15px;
+}
+
+/* Miniatures dans le carrousel */
+.carousel-thumbnail {
+    width: 120px; /* Taille fixe des miniatures */
+    height: 80px;
+    object-fit: cover; /* Pour que les images s'adaptent à la taille */
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.thumbnail:hover {
+.carousel-thumbnail:hover {
     transform: scale(1.1);
     box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
 }
@@ -81,6 +130,7 @@ header nav a:hover {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
+/* Footer */
 footer {
     background-color: #4a4a4a;
     color: white;
