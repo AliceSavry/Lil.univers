@@ -32,15 +32,20 @@
             <h2>Galerie</h2>
             <div class="carousel">
                 <div class="carousel-track">
-                    <img src="./oeuvre1.jpg" alt="Œuvre 1" class="carousel-image">
-                    <img src="./oeuvre2.jpg" alt="Œuvre 2" class="carousel-image">
-                    <img src="./oeuvre3.jpg" alt="Œuvre 3" class="carousel-image">
+                    <img src="./oeuvre1.jpg" alt="Œuvre 1" class="carousel-image" onclick="openLightbox('./oeuvre1.jpg')">
+                    <img src="./oeuvre2.jpg" alt="Œuvre 2" class="carousel-image" onclick="openLightbox('./oeuvre2.jpg')">
+                    <img src="./oeuvre3.jpg" alt="Œuvre 3" class="carousel-image" onclick="openLightbox('./oeuvre3.jpg')">
                 </div>
                 <!-- Boutons de navigation -->
                 <button class="carousel-button prev">◀</button>
                 <button class="carousel-button next">▶</button>
             </div>
         </section>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <img id="lightbox-image" src="" alt="Image agrandie">
+        </div>
 
         <!-- Section À propos -->
         <section id="apropos">
@@ -59,12 +64,20 @@
         <p>© 2024 Portfolio de Lilou - Tous droits réservés</p>
     </footer>
 
-    <!-- Script pour la navigation du carrousel -->
+    <!-- Script -->
     <script>
-        const track = document.querySelector('.carousel-track');
-        const images = Array.from(track.children);
-        const prevButton = document.querySelector('.prev');
-        const nextButton = document.querySelector('.next');
-        const imageWidth = images[0].getBoundingClientRect().width;
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
 
-        // Arrange les images l'une à côté de l'autre
+        function openLightbox(imageSrc) {
+            lightbox.style.display = 'flex';
+            lightboxImage.src = imageSrc;
+        }
+
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+            lightboxImage.src = '';
+        }
+    </script>
+</body>
+</html>
