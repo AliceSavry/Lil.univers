@@ -2,19 +2,19 @@
 body {
     font-family: Verdana, sans-serif; /* Police Verdana */
     margin: 5px; /* Marge générale */
-    background-color: #EAF4F8; /* Couleur d’arrière-plan moderne */
-    color: #333333; /* Couleur du texte principale (gris foncé) */
+    background-color: #FFF7E6; /* Couleur d’arrière-plan moderne et énergique */
+    color: #4A4A4A; /* Couleur du texte principal (gris anthracite) */
     line-height: 1.6; /* Hauteur des lignes pour une meilleure lisibilité */
 }
 
 /* Header (ruban en haut) */
 header {
-    background-color: #2A6478; /* Couleur de fond moderne pour le ruban */
+    background-color: #FF6F61; /* Couleur corail vif pour le ruban */
     color: white; /* Texte en blanc pour contraste */
-    padding: 20px; /* Espacement interne pour le header */
+    padding: 30px; /* Plus d’espacement interne pour le header */
     text-align: center; /* Texte centré */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce sous le header */
-    margin-bottom: 5px; /* Espacement sous le header */
+    margin-bottom: 10px; /* Espacement sous le header */
 }
 
 header h1 {
@@ -22,27 +22,27 @@ header h1 {
     font-size: 2.5rem; /* Taille du texte principal */
 }
 
-/* Navigation dans le header */
 header nav ul {
     list-style: none; /* Supprime les puces des listes */
     padding: 0; /* Supprime le padding par défaut */
-    margin: 10px 0 0 0; /* Ajoute un espacement en haut */
+    margin: 15px 0 0 0; /* Ajoute un espacement en haut */
     display: flex; /* Affiche les liens en ligne */
     justify-content: center; /* Centre les liens horizontalement */
-    gap: 15px; /* Espacement entre chaque lien */
+    gap: 20px; /* Espacement entre chaque lien */
+    flex-wrap: wrap; /* Permet aux liens de passer à la ligne sur mobile */
 }
 
 header nav a {
     text-decoration: none; /* Supprime le soulignement des liens */
     font-size: 1.2rem; /* Taille du texte des liens */
     color: white; /* Couleur du texte des liens */
-    padding: 5px 10px; /* Espacement autour des liens */
+    padding: 10px 15px; /* Plus d’espace autour des liens */
     border-radius: 5px; /* Coins arrondis pour les liens */
     transition: background-color 0.3s ease; /* Animation fluide pour les changements de couleur */
 }
 
 header nav a:hover {
-    background-color: #1B4D5A; /* Couleur légèrement plus foncée au survol */
+    background-color: #D6453D; /* Couleur rouge foncé au survol */
 }
 
 /* Section "Accueil" avec une image de fond */
@@ -58,7 +58,8 @@ header nav a:hover {
     background-position: center; /* Centre l'image */
     background-repeat: no-repeat; /* Empêche la répétition de l'image */
     filter: brightness(0.8); /* Réduit légèrement la luminosité */
-    margin-bottom: 5px; /* Ajoute un espace sous la section */
+    margin-bottom: 15px; /* Ajoute un espace sous la section */
+    padding: 20px; /* Éloigne le texte des bords */
 }
 
 /* Texte de la section "Accueil" */
@@ -67,21 +68,90 @@ header nav a:hover {
     position: relative; /* Place le texte au-dessus de la couche de transparence */
     color: white; /* Couleur du texte en blanc */
     z-index: 1; /* Assure que le texte est au-dessus de l'image */
-}
-
-/* Couche de transparence au-dessus de l'image */
-#accueil::before {
-    content: ''; /* Ajoute un élément décoratif vide */
-    position: absolute; /* Positionne la couche au-dessus de l'image */
-    top: 0;
-    left: 0;
-    width: 100%; /* Prend toute la largeur */
-    height: 100%; /* Prend toute la hauteur */
-    background-color: rgba(0, 0, 0, 0.3); /* Couleur sombre avec transparence */
-    z-index: 0; /* Place cette couche derrière le texte */
+    margin: 10px 0; /* Espacement supplémentaire entre les lignes */
 }
 
 /* Section Galerie (Carrousel) */
 .carousel {
     display: flex; /* Affiche les miniatures en ligne */
-    justify-conten
+    justify-content: center; /* Centre le carrousel */
+    align-items: center; /* Aligne verticalement */
+    gap: 15px; /* Espacement entre les miniatures */
+    padding: 20px; /* Espacement autour du carrousel */
+    max-width: 100%; /* S'adapte à la taille de l'écran */
+    overflow-x: auto; /* Permet le défilement horizontal si nécessaire */
+    margin-bottom: 15px; /* Ajoute un espace sous le carrousel */
+}
+
+/* Miniatures dans le carrousel */
+.carousel-thumbnail {
+    width: 120px; /* Largeur fixe des miniatures */
+    height: 80px; /* Hauteur fixe des miniatures */
+    object-fit: cover; /* Adapte l'image à la taille sans la déformer */
+    border-radius: 8px; /* Coins arrondis pour les miniatures */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre légère */
+    cursor: pointer; /* Change le curseur au survol */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation fluide pour le zoom */
+}
+
+.carousel-thumbnail:hover {
+    transform: scale(1.1); /* Agrandit légèrement l'image au survol */
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); /* Ombre plus forte au survol */
+}
+
+/* Lightbox (agrandissement d'image) */
+.lightbox {
+    display: none; /* Caché par défaut */
+    position: fixed; /* S'étend sur tout l'écran */
+    top: 0;
+    left: 0;
+    width: 100%; /* Prend toute la largeur */
+    height: 100%; /* Prend toute la hauteur */
+    background: rgba(0, 0, 0, 0.8); /* Couleur sombre avec opacité */
+    justify-content: center; /* Centre l'image agrandie */
+    align-items: center; /* Centre l'image verticalement */
+    z-index: 1000; /* Place au-dessus du reste du contenu */
+}
+
+.lightbox img {
+    max-width: 90%; /* Taille maximale pour l'image agrandie */
+    max-height: 90%; /* Hauteur maximale pour l'image agrandie */
+    border: 5px solid white; /* Bordure blanche autour de l'image */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Ajoute une ombre douce */
+}
+
+/* Footer */
+footer {
+    background-color: #FF6F61; /* Même couleur que le header */
+    color: white; /* Texte en blanc */
+    text-align: center; /* Texte centré */
+    padding: 15px; /* Espacement interne */
+    font-size: 1rem; /* Taille légèrement plus grande pour mobile */
+    margin-top: 10px; /* Ajoute un espace au-dessus du footer */
+}
+
+/* --- Media Queries pour les mobiles --- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem; /* Réduit la taille du titre sur les petits écrans */
+    }
+
+    header nav a {
+        font-size: 1rem; /* Taille réduite des liens */
+        padding: 8px 10px; /* Moins d'espace autour des liens */
+    }
+
+    #accueil {
+        height: 300px; /* Réduit la hauteur de la section "Accueil" */
+        padding: 15px; /* Moins d'espacement interne */
+    }
+
+    .carousel-thumbnail {
+        width: 90px; /* Miniatures plus petites pour les petits écrans */
+        height: 60px;
+    }
+
+    footer {
+        font-size: 0.9rem; /* Texte légèrement réduit dans le footer */
+    }
+}
