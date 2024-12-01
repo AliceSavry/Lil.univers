@@ -1,15 +1,15 @@
 /* Style général */
 body {
     font-family: verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
+    margin: 5;
+    padding: 5;
+    background-color: #B4E6F0;
     color: #333;
     line-height: 1.6;
 }
 
 header {
-    background-color: #ffccf2;
+    background-color: #3394A7;
     color: #4a4a4a;
     padding: 20px;
     text-align: center;
