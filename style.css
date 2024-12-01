@@ -1,16 +1,16 @@
 /* Style général pour le site */
 body {
-    font-family: Verdana, sans-serif; /* Définit la police principale comme Verdana */
-    margin: 5px; /* Marge globale de 5px autour du contenu */
-    background-color: #B4E6F0; /* Couleur d’arrière-plan pastel */
-    color: #333; /* Couleur du texte principale (gris foncé) */
+    font-family: Verdana, sans-serif; /* Police Verdana */
+    margin: 5px; /* Marge générale */
+    background-color: #EAF4F8; /* Couleur d’arrière-plan moderne */
+    color: #333333; /* Couleur du texte principale (gris foncé) */
     line-height: 1.6; /* Hauteur des lignes pour une meilleure lisibilité */
 }
 
 /* Header (ruban en haut) */
 header {
-    background-color: #3394A7; /* Couleur de fond du header (bleu moderne) */
-    color: white; /* Couleur du texte en blanc pour contraste */
+    background-color: #2A6478; /* Couleur de fond moderne pour le ruban */
+    color: white; /* Texte en blanc pour contraste */
     padding: 20px; /* Espacement interne pour le header */
     text-align: center; /* Texte centré */
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce sous le header */
@@ -42,7 +42,7 @@ header nav a {
 }
 
 header nav a:hover {
-    background-color: #287788; /* Couleur légèrement plus foncée au survol */
+    background-color: #1B4D5A; /* Couleur légèrement plus foncée au survol */
 }
 
 /* Section "Accueil" avec une image de fond */
@@ -57,7 +57,7 @@ header nav a:hover {
     background-size: cover; /* L'image couvre toute la section */
     background-position: center; /* Centre l'image */
     background-repeat: no-repeat; /* Empêche la répétition de l'image */
-    filter: brightness(0.7); /* Réduit la luminosité pour améliorer la lisibilité du texte */
+    filter: brightness(0.8); /* Réduit légèrement la luminosité */
     margin-bottom: 5px; /* Ajoute un espace sous la section */
 }
 
@@ -77,65 +77,11 @@ header nav a:hover {
     left: 0;
     width: 100%; /* Prend toute la largeur */
     height: 100%; /* Prend toute la hauteur */
-    background-color: rgba(0, 0, 0, 0.4); /* Couleur sombre avec transparence */
+    background-color: rgba(0, 0, 0, 0.3); /* Couleur sombre avec transparence */
     z-index: 0; /* Place cette couche derrière le texte */
 }
 
 /* Section Galerie (Carrousel) */
 .carousel {
     display: flex; /* Affiche les miniatures en ligne */
-    justify-content: center; /* Centre le carrousel */
-    align-items: center; /* Aligne verticalement */
-    gap: 15px; /* Espacement entre les miniatures */
-    padding: 20px 0; /* Espacement autour de la galerie */
-    max-width: 100%; /* S'adapte à la taille de l'écran */
-    overflow-x: auto; /* Permet le défilement horizontal si nécessaire */
-    margin-bottom: 5px; /* Ajoute un espace sous le carrousel */
-}
-
-/* Miniatures dans le carrousel */
-.carousel-thumbnail {
-    width: 120px; /* Largeur fixe des miniatures */
-    height: 80px; /* Hauteur fixe des miniatures */
-    object-fit: cover; /* Adapte l'image à la taille sans la déformer */
-    border-radius: 8px; /* Coins arrondis pour les miniatures */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre légère */
-    cursor: pointer; /* Change le curseur au survol */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation fluide pour le zoom */
-}
-
-.carousel-thumbnail:hover {
-    transform: scale(1.1); /* Agrandit légèrement l'image au survol */
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); /* Ombre plus forte au survol */
-}
-
-/* Lightbox (agrandissement d'image) */
-.lightbox {
-    display: none; /* Caché par défaut */
-    position: fixed; /* S'étend sur tout l'écran */
-    top: 0;
-    left: 0;
-    width: 100%; /* Prend toute la largeur */
-    height: 100%; /* Prend toute la hauteur */
-    background: rgba(0, 0, 0, 0.8); /* Couleur sombre avec opacité */
-    justify-content: center; /* Centre l'image agrandie */
-    align-items: center; /* Centre l'image verticalement */
-    z-index: 1000; /* Place au-dessus du reste du contenu */
-}
-
-.lightbox img {
-    max-width: 90%; /* Taille maximale pour l'image agrandie */
-    max-height: 90%; /* Hauteur maximale pour l'image agrandie */
-    border: 5px solid white; /* Bordure blanche autour de l'image */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Ajoute une ombre douce */
-}
-
-/* Footer */
-footer {
-    background-color: #3394A7; /* Même couleur que le header */
-    color: white; /* Texte en blanc */
-    text-align: center; /* Texte centré */
-    padding: 10px; /* Espacement interne */
-    font-size: 0.9rem; /* Taille du texte plus petite */
-    margin-top: 5px; /* Ajoute un espace au-dessus du footer */
-}
+    justify-conten
