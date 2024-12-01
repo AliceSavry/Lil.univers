@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de [Prénom]</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Portfolio de Lilou</title>
+    <link rel="stylesheet" href="./style.css"> <!-- Assure-toi que "style.css" est dans le même répertoire -->
 </head>
 <body>
     <header>
-        <h1>Portfolio de [Prénom]</h1>
+        <h1>Portfolio de Lilou</h1>
         <nav>
             <ul>
                 <li><a href="#accueil">Accueil</a></li>
@@ -19,31 +19,36 @@
         </nav>
     </header>
 
-    <section id="accueil">
-        <h2>Bienvenue dans mon univers</h2>
-        <p>Je suis Lilou, une jeune artiste de 14 ans, passionnée par l’art et le graphisme, avec un style coloré et inspiré du manga, enfantin et drole.</p>
-        <img src="image_principale.jpg" alt="Illustration principale">
-    </section>
+    <main>
+        <!-- Section Accueil -->
+        <section id="accueil">
+            <h2>Bienvenue dans mon univers</h2>
+            <p>Je suis Lilou, une jeune artiste de 14 ans, passionnée par l’art et le graphisme, avec un style coloré et inspiré du manga, enfantin et drôle.</p>
+            <img src="./image_principale.jpg" alt="Illustration principale" style="width: 100%; max-width: 600px; height: auto;">
+        </section>
 
-    <section id="galerie">
-        <h2>Galerie</h2>
-        <div class="gallery-grid">
-            <img src="oeuvre1.jpg" alt="Œuvre 1">
-            <img src="oeuvre2.jpg" alt="Œuvre 2">
-            <img src="oeuvre3.jpg" alt="Œuvre 3">
-            <!-- Ajouter d'autres images ici -->
-        </div>
-    </section>
+        <!-- Section Galerie -->
+        <section id="galerie">
+            <h2>Galerie</h2>
+            <div class="gallery-grid">
+                <img src="./oeuvre1.jpg" alt="Œuvre 1" style="width: 100%; max-width: 300px; height: auto;">
+                <img src="./oeuvre2.jpg" alt="Œuvre 2" style="width: 100%; max-width: 300px; height: auto;">
+                <img src="./oeuvre3.jpg" alt="Œuvre 3" style="width: 100%; max-width: 300px; height: auto;">
+            </div>
+        </section>
 
-    <section id="apropos">
-        <h2>À propos de moi</h2>
-        <p>Je dessine depuis mon enfance et je m'inspire principalement des mangas japonais et de mon univers imaginaire. J'aspire à développer mes compétences dans des études d’art et de design graphique.</p>
-    </section>
+        <!-- Section À propos -->
+        <section id="apropos">
+            <h2>À propos de moi</h2>
+            <p>Je dessine depuis mon enfance et je m'inspire principalement des mangas japonais et de mon univers imaginaire. J'aspire à développer mes compétences dans des études d’art et de design graphique.</p>
+        </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Vous pouvez me contacter par <a href="mailto:lilousavry@icloud.com">email</a></p>
-    </section>
+        <!-- Section Contact -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Vous pouvez me contacter par <a href="mailto:lilousavry@icloud.com">email</a>.</p>
+        </section>
+    </main>
 
     <footer>
         <p>© 2024 Portfolio de Lilou - Tous droits réservés</p>
