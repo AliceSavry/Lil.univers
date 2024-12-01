@@ -1,141 +1,141 @@
-/* Style général */
+/* Style général pour le site */
 body {
-    font-family: verdana, sans-serif;
-    margin: 5;
-    padding: 0;
-    background-color: #B4E6F0;
-    color: #333;
-    line-height: 1.6;
+    font-family: Verdana, sans-serif; /* Définit la police principale comme Verdana */
+    margin: 5px; /* Marge globale de 5px autour du contenu */
+    background-color: #B4E6F0; /* Couleur d’arrière-plan pastel */
+    color: #333; /* Couleur du texte principale (gris foncé) */
+    line-height: 1.6; /* Hauteur des lignes pour une meilleure lisibilité */
 }
 
+/* Header (ruban en haut) */
 header {
-    background-color: #3394A7;
-    color: #4a4a4a;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #3394A7; /* Couleur de fond du header (bleu moderne) */
+    color: white; /* Couleur du texte en blanc pour contraste */
+    padding: 20px; /* Espacement interne pour le header */
+    text-align: center; /* Texte centré */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce sous le header */
+    margin-bottom: 5px; /* Espacement sous le header */
 }
 
 header h1 {
-    margin: 5;
-    font-size: 2.5rem;
+    margin: 0; /* Enlève les marges autour du titre principal */
+    font-size: 2.5rem; /* Taille du texte principal */
 }
 
+/* Navigation dans le header */
 header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0 0;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+    list-style: none; /* Supprime les puces des listes */
+    padding: 0; /* Supprime le padding par défaut */
+    margin: 10px 0 0 0; /* Ajoute un espacement en haut */
+    display: flex; /* Affiche les liens en ligne */
+    justify-content: center; /* Centre les liens horizontalement */
+    gap: 15px; /* Espacement entre chaque lien */
 }
 
 header nav a {
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: #333;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    text-decoration: none; /* Supprime le soulignement des liens */
+    font-size: 1.2rem; /* Taille du texte des liens */
+    color: white; /* Couleur du texte des liens */
+    padding: 5px 10px; /* Espacement autour des liens */
+    border-radius: 5px; /* Coins arrondis pour les liens */
+    transition: background-color 0.3s ease; /* Animation fluide pour les changements de couleur */
 }
 
 header nav a:hover {
-    background-color: #ff85b3;
-    color: white;
+    background-color: #287788; /* Couleur légèrement plus foncée au survol */
 }
 
-/* Section Accueil avec image de fond */
+/* Section "Accueil" avec une image de fond */
 #accueil {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 400px; /* Hauteur de la section */
-    background-image: url('./image_principale.jpg'); /* Image de fond */
-    background-size: cover; /* Couvre toute la section */
+    position: relative; /* Nécessaire pour positionner le contenu et les couches */
+    display: flex; /* Permet de centrer le texte verticalement et horizontalement */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    text-align: center; /* Centre le texte */
+    height: 400px; /* Hauteur fixe de la section */
+    background-image: url('./image_principale.jpg'); /* Définit l'image de fond */
+    background-size: cover; /* L'image couvre toute la section */
     background-position: center; /* Centre l'image */
-    background-repeat: no-repeat;
-    filter: brightness(0.7); /* Réduit la luminosité pour un effet transparent */
+    background-repeat: no-repeat; /* Empêche la répétition de l'image */
+    filter: brightness(0.7); /* Réduit la luminosité pour améliorer la lisibilité du texte */
+    margin-bottom: 5px; /* Ajoute un espace sous la section */
 }
 
+/* Texte de la section "Accueil" */
 #accueil h2,
 #accueil p {
-    position: relative;
-    color: white; /* Texte en blanc pour le contraste */
-    z-index: 1; /* S'assurer que le texte est au-dessus */
+    position: relative; /* Place le texte au-dessus de la couche de transparence */
+    color: white; /* Couleur du texte en blanc */
+    z-index: 1; /* Assure que le texte est au-dessus de l'image */
 }
 
+/* Couche de transparence au-dessus de l'image */
 #accueil::before {
-    content: '';
-    position: absolute;
+    content: ''; /* Ajoute un élément décoratif vide */
+    position: absolute; /* Positionne la couche au-dessus de l'image */
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Couche de transparence */
-    z-index: 0; /* Derrière le texte */
+    width: 100%; /* Prend toute la largeur */
+    height: 100%; /* Prend toute la hauteur */
+    background-color: rgba(0, 0, 0, 0.4); /* Couleur sombre avec transparence */
+    z-index: 0; /* Place cette couche derrière le texte */
 }
 
-/* Style du carrousel */
+/* Section Galerie (Carrousel) */
 .carousel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    padding: 20px 0;
-    max-width: 100%;
-    overflow-x: auto;
-}
-
-.carousel-track {
-    display: flex;
-    gap: 15px;
+    display: flex; /* Affiche les miniatures en ligne */
+    justify-content: center; /* Centre le carrousel */
+    align-items: center; /* Aligne verticalement */
+    gap: 15px; /* Espacement entre les miniatures */
+    padding: 20px 0; /* Espacement autour de la galerie */
+    max-width: 100%; /* S'adapte à la taille de l'écran */
+    overflow-x: auto; /* Permet le défilement horizontal si nécessaire */
+    margin-bottom: 5px; /* Ajoute un espace sous le carrousel */
 }
 
 /* Miniatures dans le carrousel */
 .carousel-thumbnail {
-    width: 120px; /* Taille fixe des miniatures */
-    height: 80px;
-    object-fit: cover; /* Pour que les images s'adaptent à la taille */
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 120px; /* Largeur fixe des miniatures */
+    height: 80px; /* Hauteur fixe des miniatures */
+    object-fit: cover; /* Adapte l'image à la taille sans la déformer */
+    border-radius: 8px; /* Coins arrondis pour les miniatures */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre légère */
+    cursor: pointer; /* Change le curseur au survol */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation fluide pour le zoom */
 }
 
 .carousel-thumbnail:hover {
-    transform: scale(1.1);
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1); /* Agrandit légèrement l'image au survol */
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); /* Ombre plus forte au survol */
 }
 
-/* Style de la lightbox */
+/* Lightbox (agrandissement d'image) */
 .lightbox {
-    display: none;
-    position: fixed;
+    display: none; /* Caché par défaut */
+    position: fixed; /* S'étend sur tout l'écran */
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+    width: 100%; /* Prend toute la largeur */
+    height: 100%; /* Prend toute la hauteur */
+    background: rgba(0, 0, 0, 0.8); /* Couleur sombre avec opacité */
+    justify-content: center; /* Centre l'image agrandie */
+    align-items: center; /* Centre l'image verticalement */
+    z-index: 1000; /* Place au-dessus du reste du contenu */
 }
 
 .lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-    border: 5px solid white;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    max-width: 90%; /* Taille maximale pour l'image agrandie */
+    max-height: 90%; /* Hauteur maximale pour l'image agrandie */
+    border: 5px solid white; /* Bordure blanche autour de l'image */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Ajoute une ombre douce */
 }
 
 /* Footer */
 footer {
-    background-color: #4a4a4a;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-    font-size: 0.9rem;
+    background-color: #3394A7; /* Même couleur que le header */
+    color: white; /* Texte en blanc */
+    text-align: center; /* Texte centré */
+    padding: 10px; /* Espacement interne */
+    font-size: 0.9rem; /* Taille du texte plus petite */
+    margin-top: 5px; /* Ajoute un espace au-dessus du footer */
 }
