@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio de Lilou</title>
-    <link rel="stylesheet" href="./style.css"> <!-- Lien vers le CSS -->
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <header>
@@ -32,13 +32,11 @@
             <h2>Galerie</h2>
             <div class="carousel">
                 <div class="carousel-track">
-                    <img src="./oeuvre1.jpg" alt="Œuvre 1" class="carousel-image thumbnail" onclick="openLightbox('./oeuvre1.jpg')">
-                    <img src="./oeuvre2.jpg" alt="Œuvre 2" class="carousel-image thumbnail" onclick="openLightbox('./oeuvre2.jpg')">
-                    <img src="./oeuvre3.jpg" alt="Œuvre 3" class="carousel-image thumbnail" onclick="openLightbox('./oeuvre3.jpg')">
+                    <!-- Miniatures cliquables -->
+                    <img src="./oeuvre1.jpg" alt="Œuvre 1" class="thumbnail" onclick="openLightbox('./oeuvre1.jpg')">
+                    <img src="./oeuvre2.jpg" alt="Œuvre 2" class="thumbnail" onclick="openLightbox('./oeuvre2.jpg')">
+                    <img src="./oeuvre3.jpg" alt="Œuvre 3" class="thumbnail" onclick="openLightbox('./oeuvre3.jpg')">
                 </div>
-                <!-- Boutons de navigation -->
-                <button class="carousel-button prev">◀</button>
-                <button class="carousel-button next">▶</button>
             </div>
         </section>
 
@@ -64,7 +62,7 @@
         <p>© 2024 Portfolio de Lilou - Tous droits réservés</p>
     </footer>
 
-    <!-- Script pour la lightbox et le carrousel -->
+    <!-- Script pour la lightbox -->
     <script>
         const lightbox = document.getElementById('lightbox');
         const lightboxImage = document.getElementById('lightbox-image');
