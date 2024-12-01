@@ -1,42 +1,50 @@
-/* Style du carrousel */
-.carousel {
-    position: relative;
-    overflow: hidden;
+/* Style de la lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border: 5px solid white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-.carousel-image {
-    min-width: 100%;
-    height: auto;
+/* Empêcher le clic droit sur les images */
+img {
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -ms-user-drag: none;
+    user-drag: none;
+    user-select: none;
 }
 
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 2rem;
+img:hover {
     cursor: pointer;
-    z-index: 10;
 }
 
-.carousel-button.prev {
-    left: 10px;
+/* Désactiver le clic droit */
+body {
+    -webkit-touch-callout: none; /* Désactiver les options sur mobile */
+    -webkit-user-select: none;  /* Désactiver la sélection */
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-.carousel-button.next {
-    right: 10px;
+body img {
+    pointer-events: none;
 }
 
-.carousel-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+body .carousel-image {
+    pointer-events: auto; /* Permettre les clics sur les images spécifiques */
 }
