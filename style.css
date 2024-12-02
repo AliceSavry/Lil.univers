@@ -2,9 +2,18 @@
 body {
     font-family: Verdana, sans-serif;
     margin: 5px;
-    background-color: #FFF7E6; /* Couleur claire et chaleureuse */
+    background-color: #FFF7E6;
     color: #4A4A4A;
     line-height: 1.6;
+}
+
+/* Empêcher les interactions avec les images */
+img {
+    pointer-events: none; /* Désactive les interactions */
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -ms-user-drag: none;
+    user-drag: none;
 }
 
 /* Header */
@@ -16,172 +25,43 @@ header {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5rem;
-}
-
-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-header nav a {
-    text-decoration: none;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-header nav a:hover {
-    background-color: #D6453D;
-}
-
-/* Mobile Menu */
-#mobile-menu {
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    margin: 20px;
-}
-
-.line {
-    width: 100%;
-    height: 4px;
-    background-color: white;
-}
-
-@media (max-width: 768px) {
-    #mobile-menu {
-        display: flex;
-    }
-
-    nav ul {
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-        background-color: #FF6F61;
-        padding: 10px;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-    }
-
-    nav ul.active {
-        display: flex;
-    }
-}
-
-/* Section Accueil */
-#accueil {
-    height: 400px;
-    background-image: url('./image_principale.jpg');
-    background-size: cover;
-    background-position: center;
-    filter: brightness(0.8);
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Carousel */
-.carousel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-x: auto;
-    padding: 20px;
-}
-
+/* Section Galerie */
 .carousel-thumbnail {
+    position: relative;
     width: 120px;
     height: 80px;
     object-fit: cover;
     border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.3s ease;
 }
 
-.carousel-thumbnail:hover {
-    transform: scale(1.1);
+.carousel-thumbnail::after {
+    content: "Lilou SAVRY";
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2px 5px;
+    border-radius: 3px;
 }
 
-/* Contact Form */
-form {
-    max-width: 400px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-input, textarea {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-button {
-    background-color: #FF6F61;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-footer {
-    background-color: #4C1D1D; /* Couleur plus foncée */
-    color: white;
-    text-align: center;
-    padding: 15px;
-    font-size: 1rem;
-    margin-top: 10px;
-}
-
-button:hover {
-    background-color: #D6453D;
-}
-
-/* Back to Top Button */
-#back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #FF6F61;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
+/* Lightbox */
+.lightbox {
     display: none;
-    cursor: pointer;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
 }
 
-/* Animations */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 1s forwards;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.lightbox img {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
 }
