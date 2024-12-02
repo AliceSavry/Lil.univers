@@ -3,12 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon petit univers</title>
+    <meta name="description" content="Portfolio artistique de Lilou, jeune artiste passionnée de graphisme et d'art manga. Découvrez son univers coloré et créatif.">
+    <title>Portfolio de Lilou</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
-        <h1>Mon petit univers</h1>
+        <div id="mobile-menu">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+        <h1>Portfolio de Lilou</h1>
         <nav>
             <ul>
                 <li><a href="#accueil">Accueil</a></li>
@@ -20,9 +27,9 @@
     </header>
 
     <main>
-        <!-- Section Accueil avec image de fond -->
-        <section id="accueil">
-            <h2>Venez visiter !</h2>
+        <!-- Section Accueil -->
+        <section id="accueil" class="fade-in">
+            <h2>Bienvenue dans mon univers</h2>
             <p>Je suis Lilou, une jeune artiste de 14 ans, passionnée par l’art et le graphisme, avec un style coloré inspiré du manga, enfantin et drôle.</p>
         </section>
 
@@ -31,28 +38,34 @@
             <h2>Galerie</h2>
             <div class="carousel">
                 <div class="carousel-track">
-                    <img src="./oeuvre1.jpg" alt="Œuvre 1" class="carousel-thumbnail" onclick="openLightbox('./oeuvre1.jpg')">
-                    <img src="./oeuvre2.jpg" alt="Œuvre 2" class="carousel-thumbnail" onclick="openLightbox('./oeuvre2.jpg')">
-                    <img src="./oeuvre3.jpg" alt="Œuvre 3" class="carousel-thumbnail" onclick="openLightbox('./oeuvre3.jpg')">
+                    <img src="./oeuvre1.jpg" alt="Œuvre 1" class="carousel-thumbnail">
+                    <img src="./oeuvre2.jpg" alt="Œuvre 2" class="carousel-thumbnail">
+                    <img src="./oeuvre3.jpg" alt="Œuvre 3" class="carousel-thumbnail">
                 </div>
             </div>
         </section>
 
-        <!-- Lightbox -->
-        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-            <img id="lightbox-image" src="" alt="Image agrandie">
-        </div>
-
         <!-- Section À propos -->
-        <section id="apropos">
+        <section id="apropos" class="fade-in">
             <h2>À propos de moi</h2>
             <p>Je dessine depuis mon enfance et je m'inspire principalement des mangas japonais et de mon univers imaginaire. J'aspire à développer mes compétences dans des études d’art et de design graphique.</p>
         </section>
 
         <!-- Section Contact -->
-        <section id="contact">
+        <section id="contact" class="fade-in">
             <h2>Contact</h2>
-            <p>Vous pouvez me contacter par <a href="mailto:lilousavry@icloud.com">email</a>.</p>
+            <form id="contact-form">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" placeholder="Votre email" required>
+                
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" placeholder="Votre message..." rows="4" required></textarea>
+                
+                <button type="submit">Envoyer</button>
+            </form>
         </section>
     </main>
 
@@ -60,20 +73,8 @@
         <p>© 2024 Portfolio de Lilou - Tous droits réservés</p>
     </footer>
 
-    <!-- Script pour la lightbox -->
-    <script>
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImage = document.getElementById('lightbox-image');
+    <button id="back-to-top" onclick="scrollToTop()">↑</button>
 
-        function openLightbox(imageSrc) {
-            lightbox.style.display = 'flex';
-            lightboxImage.src = imageSrc;
-        }
-
-        function closeLightbox() {
-            lightbox.style.display = 'none';
-            lightboxImage.src = '';
-        }
-    </script>
+    <script src="./script.js"></script>
 </body>
 </html>
