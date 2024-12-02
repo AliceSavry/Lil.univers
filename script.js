@@ -3,7 +3,6 @@ function openLightbox(imageSrc) {
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightbox-image');
 
-    // Affiche la lightbox et charge l'image
     lightbox.style.display = 'flex';
     lightboxImage.src = imageSrc;
 }
@@ -13,7 +12,6 @@ function closeLightbox() {
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightbox-image');
 
-    // Cache la lightbox et vide la source de l'image
     lightbox.style.display = 'none';
     lightboxImage.src = '';
 }
