@@ -143,6 +143,15 @@ button {
     cursor: pointer;
 }
 
+footer {
+    background-color: #4C1D1D; /* Couleur plus foncée */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
 button:hover {
     background-color: #D6453D;
 }
