@@ -1,157 +1,178 @@
-/* Style général pour le site */
+/* Style général */
 body {
-    font-family: Verdana, sans-serif; /* Police Verdana */
-    margin: 5px; /* Marge générale */
-    background-color: #FFF7E6; /* Couleur d’arrière-plan moderne et énergique */
-    color: #4A4A4A; /* Couleur du texte principal (gris anthracite) */
-    line-height: 1.6; /* Hauteur des lignes pour une meilleure lisibilité */
+    font-family: Verdana, sans-serif;
+    margin: 5px;
+    background-color: #FFF7E6; /* Couleur claire et chaleureuse */
+    color: #4A4A4A;
+    line-height: 1.6;
 }
 
-/* Header (ruban en haut) */
+/* Header */
 header {
-    background-color: #FF6F61; /* Couleur corail vif pour le ruban */
-    color: white; /* Texte en blanc pour contraste */
-    padding: 30px; /* Plus d’espacement interne pour le header */
-    text-align: center; /* Texte centré */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce sous le header */
-    margin-bottom: 10px; /* Espacement sous le header */
+    background-color: #FF6F61;
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    margin: 0; /* Enlève les marges autour du titre principal */
-    font-size: 2.5rem; /* Taille du texte principal */
+    margin: 0;
+    font-size: 2.5rem;
 }
 
 header nav ul {
-    list-style: none; /* Supprime les puces des listes */
-    padding: 0; /* Supprime le padding par défaut */
-    margin: 15px 0 0 0; /* Ajoute un espacement en haut */
-    display: flex; /* Affiche les liens en ligne */
-    justify-content: center; /* Centre les liens horizontalement */
-    gap: 20px; /* Espacement entre chaque lien */
-    flex-wrap: wrap; /* Permet aux liens de passer à la ligne sur mobile */
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 header nav a {
-    text-decoration: none; /* Supprime le soulignement des liens */
-    font-size: 1.2rem; /* Taille du texte des liens */
-    color: white; /* Couleur du texte des liens */
-    padding: 10px 15px; /* Plus d’espace autour des liens */
-    border-radius: 5px; /* Coins arrondis pour les liens */
-    transition: background-color 0.3s ease; /* Animation fluide pour les changements de couleur */
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 header nav a:hover {
-    background-color: #D6453D; /* Couleur rouge foncé au survol */
+    background-color: #D6453D;
 }
 
-/* Section "Accueil" avec une image de fond */
+/* Mobile Menu */
+#mobile-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.line {
+    width: 100%;
+    height: 4px;
+    background-color: white;
+}
+
+@media (max-width: 768px) {
+    #mobile-menu {
+        display: flex;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #FF6F61;
+        padding: 10px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+}
+
+/* Section Accueil */
 #accueil {
-    position: relative; /* Nécessaire pour positionner le contenu et les couches */
-    display: flex; /* Permet de centrer le texte verticalement et horizontalement */
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
-    text-align: center; /* Centre le texte */
-    height: 400px; /* Hauteur fixe de la section */
-    background-image: url('./image_principale.jpg'); /* Définit l'image de fond */
-    background-size: cover; /* L'image couvre toute la section */
-    background-position: center; /* Centre l'image */
-    background-repeat: no-repeat; /* Empêche la répétition de l'image */
-    filter: brightness(0.8); /* Réduit légèrement la luminosité */
-    margin-bottom: 15px; /* Ajoute un espace sous la section */
-    padding: 20px; /* Éloigne le texte des bords */
+    height: 400px;
+    background-image: url('./image_principale.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.8);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Texte de la section "Accueil" */
-#accueil h2,
-#accueil p {
-    position: relative; /* Place le texte au-dessus de la couche de transparence */
-    color: white; /* Couleur du texte en blanc */
-    z-index: 1; /* Assure que le texte est au-dessus de l'image */
-    margin: 10px 0; /* Espacement supplémentaire entre les lignes */
-}
-
-/* Section Galerie (Carrousel) */
+/* Carousel */
 .carousel {
-    display: flex; /* Affiche les miniatures en ligne */
-    justify-content: center; /* Centre le carrousel */
-    align-items: center; /* Aligne verticalement */
-    gap: 15px; /* Espacement entre les miniatures */
-    padding: 20px; /* Espacement autour du carrousel */
-    max-width: 100%; /* S'adapte à la taille de l'écran */
-    overflow-x: auto; /* Permet le défilement horizontal si nécessaire */
-    margin-bottom: 15px; /* Ajoute un espace sous le carrousel */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;
+    padding: 20px;
 }
 
-/* Miniatures dans le carrousel */
 .carousel-thumbnail {
-    width: 120px; /* Largeur fixe des miniatures */
-    height: 80px; /* Hauteur fixe des miniatures */
-    object-fit: cover; /* Adapte l'image à la taille sans la déformer */
-    border-radius: 8px; /* Coins arrondis pour les miniatures */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre légère */
-    cursor: pointer; /* Change le curseur au survol */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation fluide pour le zoom */
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 .carousel-thumbnail:hover {
-    transform: scale(1.1); /* Agrandit légèrement l'image au survol */
-    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); /* Ombre plus forte au survol */
+    transform: scale(1.1);
 }
 
-/* Lightbox (agrandissement d'image) */
-.lightbox {
-    display: none; /* Caché par défaut */
-    position: fixed; /* S'étend sur tout l'écran */
-    top: 0;
-    left: 0;
-    width: 100%; /* Prend toute la largeur */
-    height: 100%; /* Prend toute la hauteur */
-    background: rgba(0, 0, 0, 0.8); /* Couleur sombre avec opacité */
-    justify-content: center; /* Centre l'image agrandie */
-    align-items: center; /* Centre l'image verticalement */
-    z-index: 1000; /* Place au-dessus du reste du contenu */
+/* Contact Form */
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.lightbox img {
-    max-width: 90%; /* Taille maximale pour l'image agrandie */
-    max-height: 90%; /* Hauteur maximale pour l'image agrandie */
-    border: 5px solid white; /* Bordure blanche autour de l'image */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Ajoute une ombre douce */
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
-/* Footer */
-footer {
-    background-color: #FF6F61; /* Même couleur que le header */
-    color: white; /* Texte en blanc */
-    text-align: center; /* Texte centré */
-    padding: 15px; /* Espacement interne */
-    font-size: 1rem; /* Taille légèrement plus grande pour mobile */
-    margin-top: 10px; /* Ajoute un espace au-dessus du footer */
+button {
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-/* --- Media Queries pour les mobiles --- */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 1.8rem; /* Réduit la taille du titre sur les petits écrans */
-    }
+button:hover {
+    background-color: #D6453D;
+}
 
-    header nav a {
-        font-size: 1rem; /* Taille réduite des liens */
-        padding: 8px 10px; /* Moins d'espace autour des liens */
-    }
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    display: none;
+    cursor: pointer;
+}
 
-    #accueil {
-        height: 300px; /* Réduit la hauteur de la section "Accueil" */
-        padding: 15px; /* Moins d'espacement interne */
-    }
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
 
-    .carousel-thumbnail {
-        width: 90px; /* Miniatures plus petites pour les petits écrans */
-        height: 60px;
-    }
-
-    footer {
-        font-size: 0.9rem; /* Texte légèrement réduit dans le footer */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
