@@ -16,7 +16,7 @@ function closeLightbox() {
     lightboxImage.src = '';
 }
 
-// Empêcher le clic droit sur les images
+// Empêche le clic droit sur les images
 document.addEventListener('contextmenu', function (event) {
     if (event.target.tagName === 'IMG') {
         event.preventDefault();
