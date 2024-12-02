@@ -5,16 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio artistique de Lilou, jeune artiste passionnée de graphisme et d'art manga. Découvrez son univers coloré et créatif.">
     <title>Portfolio de Lilou</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/Lil.univers/style.css">
+    <link rel="icon" href="/Lil.univers/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
-        <div id="mobile-menu">
-            <span class="line"></span>
-            <span class="line"></span>
-            <span class="line"></span>
-        </div>
         <h1>Portfolio de Lilou</h1>
         <nav>
             <ul>
@@ -27,50 +22,30 @@
     </header>
 
     <main>
-        <!-- Section Accueil -->
-        <section id="accueil" class="fade-in">
+        <section id="accueil">
             <h2>Bienvenue dans mon univers</h2>
-            <p>Je suis Lilou, une jeune artiste de 14 ans, passionnée par l’art et le graphisme, avec un style coloré inspiré du manga, enfantin et drôle.</p>
+            <p>Je suis Lilou, une jeune artiste de 14 ans, passionnée par l’art et le graphisme.</p>
         </section>
 
-        <!-- Section Galerie -->
         <section id="galerie">
             <h2>Galerie</h2>
             <div class="carousel">
-                <div class="carousel-track">
-                    <img src="./oeuvre1.jpg" alt="Œuvre 1" class="carousel-thumbnail" onclick="openLightbox('./oeuvre1.jpg')">
-                    <img src="./Dessin1.jpg" alt="Œuvre 2" class="carousel-thumbnail" onclick="openLightbox('./Dessin1.jpg')">
-                    <img src="./Dessin2.jpg" alt="Œuvre 3" class="carousel-thumbnail" onclick="openLightbox('./Dessin2.jpg')">
-                    <img src="./Dessin3.jpg" alt="Œuvre 4" class="carousel-thumbnail" onclick="openLightbox('./Dessin3.jpg')">
-                    <img src="./Dessin4.jpg" alt="Œuvre 5" class="carousel-thumbnail" onclick="openLightbox('./Dessin4.jpg')">
-                </div>
+                <img src="/Lil.univers/oeuvre1.jpg" alt="Œuvre 1" class="carousel-thumbnail" onclick="openLightbox('/Lil.univers/oeuvre1.jpg')">
+                <img src="/Lil.univers/Dessin1.jpg" alt="Œuvre 2" class="carousel-thumbnail" onclick="openLightbox('/Lil.univers/Dessin1.jpg')">
             </div>
         </section>
 
-        <!-- Lightbox -->
         <div id="lightbox" class="lightbox" onclick="closeLightbox()">
             <img id="lightbox-image" src="" alt="Image agrandie">
         </div>
 
-        <!-- Section À propos -->
-        <section id="apropos" class="fade-in">
-            <h2>À propos de moi</h2>
-            <p>Je dessine depuis mon enfance et je m'inspire principalement des mangas japonais et de mon univers imaginaire. J'aspire à développer mes compétences dans des études d’art et de design graphique.</p>
-        </section>
-
-        <!-- Section Contact -->
-        <section id="contact" class="fade-in">
+        <section id="contact">
             <h2>Contact</h2>
-            <form id="contact-form">
+            <form>
                 <label for="name">Nom :</label>
-                <input type="text" id="name" name="name" placeholder="Votre nom" required>
-                
+                <input type="text" id="name" name="name" required>
                 <label for="email">Email :</label>
-                <input type="email" id="email" name="email" placeholder="Votre email" required>
-                
-                <label for="message">Message :</label>
-                <textarea id="message" name="message" placeholder="Votre message..." rows="4" required></textarea>
-                
+                <input type="email" id="email" name="email" required>
                 <button type="submit">Envoyer</button>
             </form>
         </section>
@@ -80,8 +55,6 @@
         <p>© 2024 Portfolio de Lilou - Tous droits réservés</p>
     </footer>
 
-    <button id="back-to-top" onclick="scrollToTop()">↑</button>
-
-    <script src="./script.js"></script>
+    <script src="/Lil.univers/script.js"></script>
 </body>
 </html>
