@@ -38,14 +38,19 @@
             <h2>Galerie</h2>
             <div class="carousel">
                 <div class="carousel-track">
-                    <img src="./oeuvre1.jpg" alt="Œuvre 1" class="carousel-thumbnail">
-                    <img src="./Dessin1.jpg" alt="Œuvre 2" class="carousel-thumbnail">
-                    <img src="./Dessin2.jpg" alt="Œuvre 3" class="carousel-thumbnail">
-                    <img src="./Dessin3.jpg" alt="Œuvre 4" class="carousel-thumbnail">
-                    <img src="./Dessin4.jpg" alt="Œuvre 5" class="carousel-thumbnail">
+                    <img src="./oeuvre1.jpg" alt="Œuvre 1" class="carousel-thumbnail" onclick="openLightbox('./oeuvre1.jpg')">
+                    <img src="./Dessin1.jpg" alt="Œuvre 2" class="carousel-thumbnail" onclick="openLightbox('./Dessin1.jpg')">
+                    <img src="./Dessin2.jpg" alt="Œuvre 3" class="carousel-thumbnail" onclick="openLightbox('./Dessin2.jpg')">
+                    <img src="./Dessin3.jpg" alt="Œuvre 4" class="carousel-thumbnail" onclick="openLightbox('./Dessin3.jpg')">
+                    <img src="./Dessin4.jpg" alt="Œuvre 5" class="carousel-thumbnail" onclick="openLightbox('./Dessin4.jpg')">
                 </div>
             </div>
         </section>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <img id="lightbox-image" src="" alt="Image agrandie">
+        </div>
 
         <!-- Section À propos -->
         <section id="apropos" class="fade-in">
