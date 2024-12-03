@@ -9,6 +9,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <!-- En-tête -->
     <header>
         <h1>Portfolio de Lilou</h1>
         <nav>
@@ -36,12 +37,12 @@
             <div class="carousel-section">
                 <h3>Dessins réalisés sur iPad</h3>
                 <div class="carousel" id="ipad-carousel">
-                    <img src="ipad_afro.jpg" alt="iPad Afro" class="carousel-thumbnail" onclick="openLightbox('ipad_afro.jpg')">
-                    <img src="ipad_cute.jpg" alt="iPad Cute" class="carousel-thumbnail" onclick="openLightbox('ipad_cute.jpg')">
-                    <img src="ipad_friends.jpg" alt="iPad Friends" class="carousel-thumbnail" onclick="openLightbox('ipad_friends.jpg')">
-                    <img src="ipad_visage.jpg" alt="iPad Visage" class="carousel-thumbnail" onclick="openLightbox('ipad_visage.jpg')">
-                    <img src="ipad_patate.jpg" alt="iPad Patate" class="carousel-thumbnail" onclick="openLightbox('ipad_patate.jpg')">
-                    <img src="ipad_radis.jpg" alt="iPad Radis" class="carousel-thumbnail" onclick="openLightbox('ipad_radis.jpg')">
+                    <img src="ipad_afro.jpg" alt="Dessin Afro réalisé sur iPad" class="carousel-thumbnail" onclick="openLightbox('ipad_afro.jpg')">
+                    <img src="ipad_cute.jpg" alt="Dessin Cute réalisé sur iPad" class="carousel-thumbnail" onclick="openLightbox('ipad_cute.jpg')">
+                    <img src="ipad_friends.jpg" alt="Dessin Friends réalisé sur iPad" class="carousel-thumbnail" onclick="openLightbox('ipad_friends.jpg')">
+                    <img src="ipad_visage.jpg" alt="Dessin Visage réalisé sur iPad" class="carousel-thumbnail" onclick="openLightbox('ipad_visage.jpg')">
+                    <img src="ipad_patate.jpg" alt="Dessin Patate réalisé sur iPad" class="carousel-thumbnail" onclick="openLightbox('ipad_patate.jpg')">
+                    <img src="ipad_radis.jpg" alt="Dessin Radis réalisé sur iPad" class="carousel-thumbnail" onclick="openLightbox('ipad_radis.jpg')">
                 </div>
             </div>
 
@@ -49,9 +50,9 @@
             <div class="carousel-section">
                 <h3>Dessins réalisés sur Papier</h3>
                 <div class="carousel" id="papier-carousel">
-                    <img src="papier_Daddy.jpg" alt="Papier Daddy" class="carousel-thumbnail" onclick="openLightbox('papier_Daddy.jpg')">
-                    <img src="papier_bouclettes.jpg" alt="Papier Bouclettes" class="carousel-thumbnail" onclick="openLightbox('papier_bouclettes.jpg')">
-                    <img src="papier_frogboy.jpg" alt="Papier Frogboy" class="carousel-thumbnail" onclick="openLightbox('papier_frogboy.jpg')">
+                    <img src="papier_Daddy.jpg" alt="Dessin Daddy réalisé sur Papier" class="carousel-thumbnail" onclick="openLightbox('papier_Daddy.jpg')">
+                    <img src="papier_bouclettes.jpg" alt="Dessin Bouclettes réalisé sur Papier" class="carousel-thumbnail" onclick="openLightbox('papier_bouclettes.jpg')">
+                    <img src="papier_frogboy.jpg" alt="Dessin Frogboy réalisé sur Papier" class="carousel-thumbnail" onclick="openLightbox('papier_frogboy.jpg')">
                 </div>
             </div>
 
@@ -59,15 +60,15 @@
             <div class="carousel-section">
                 <h3>Dessins réalisés au Bic</h3>
                 <div class="carousel" id="bic-carousel">
-                    <img src="bic_pensees_noires.jpg" alt="Bic Pensées Noires" class="carousel-thumbnail" onclick="openLightbox('bic_pensees_noires.jpg')">
-                    <img src="bic_pensees_noires_rouge.jpg" alt="Bic Pensées Noires Rouge" class="carousel-thumbnail" onclick="openLightbox('bic_pensees_noires_rouge.jpg')">
+                    <img src="bic_pensees_noires.jpg" alt="Dessin Pensées Noires réalisé au Bic" class="carousel-thumbnail" onclick="openLightbox('bic_pensees_noires.jpg')">
+                    <img src="bic_pensees_noires_rouge.jpg" alt="Dessin Pensées Noires Rouge réalisé au Bic" class="carousel-thumbnail" onclick="openLightbox('bic_pensees_noires_rouge.jpg')">
                 </div>
             </div>
         </section>
 
         <!-- Lightbox -->
         <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-            <img id="lightbox-image" src="" alt="Image agrandie">
+            <img id="lightbox-image" src="" alt="Image agrandie dans une lightbox">
         </div>
 
         <!-- Section À propos -->
@@ -79,11 +80,16 @@
         <!-- Section Contact -->
         <section id="contact">
             <h2>Contact</h2>
-            <form>
+            <form action="https://formspree.io/f/your_form_id" method="POST">
                 <label for="name">Nom :</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" placeholder="Votre nom" required>
+
                 <label for="email">Email :</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" placeholder="Votre email" required>
+
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" placeholder="Votre message..." rows="4" required></textarea>
+
                 <button type="submit">Envoyer</button>
             </form>
         </section>
