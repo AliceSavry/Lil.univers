@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio artistique de Lilou, jeune artiste passionnée de graphisme et d'art manga. Découvrez son univers coloré et créatif.">
     <title>Portfolio de Lilou</title>
-    <link rel="stylesheet" href="/Lil.univers/style.css">
-    <link rel="icon" href="/Lil.univers/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -31,12 +31,37 @@
         <!-- Section Galerie -->
         <section id="galerie">
             <h2>Galerie</h2>
-            <div class="carousel">
-                <img src="/Lil.univers/oeuvre1.jpg" alt="Œuvre 1" class="carousel-thumbnail" onclick="openLightbox('/Lil.univers/oeuvre1.jpg')">
-                <img src="/Lil.univers/Dessin1.jpg" alt="Œuvre 2" class="carousel-thumbnail" onclick="openLightbox('/Lil.univers/Dessin1.jpg')">
-                <img src="/Lil.univers/Dessin2.jpg" alt="Œuvre 3" class="carousel-thumbnail" onclick="openLightbox('/Lil.univers/Dessin2.jpg')">
-                <img src="/Lil.univers/Dessin3.jpg" alt="Œuvre 4" class="carousel-thumbnail" onclick="openLightbox('/Lil.univers/Dessin3.jpg')">
-                <img src="/Lil.univers/Dessin4.jpg" alt="Œuvre 5" class="carousel-thumbnail" onclick="openLightbox('/Lil.univers/Dessin4.jpg')">
+
+            <!-- Dessins réalisés sur iPad -->
+            <div class="carousel-section">
+                <h3>Dessins réalisés sur iPad</h3>
+                <div class="carousel">
+                    <img src="ipad_afro.jpg" alt="iPad Afro" class="carousel-thumbnail" onclick="openLightbox('ipad_afro.jpg')">
+                    <img src="ipad_cute.jpg" alt="iPad Cute" class="carousel-thumbnail" onclick="openLightbox('ipad_cute.jpg')">
+                    <img src="ipad_friends.jpg" alt="iPad Friends" class="carousel-thumbnail" onclick="openLightbox('ipad_friends.jpg')">
+                    <img src="ipad_patate.jpg" alt="iPad Patate" class="carousel-thumbnail" onclick="openLightbox('ipad_patate.jpg')">
+                    <img src="ipad_radis.jpg" alt="iPad Radis" class="carousel-thumbnail" onclick="openLightbox('ipad_radis.jpg')">
+                </div>
+            </div>
+
+            <!-- Dessins réalisés sur Papier -->
+            <div class="carousel-section">
+                <h3>Dessins réalisés sur Papier</h3>
+                <div class="carousel">
+                    <img src="papier_Daddy.jpg" alt="Papier Daddy" class="carousel-thumbnail" onclick="openLightbox('papier_Daddy.jpg')">
+                    <img src="papier_boulettes.jpg" alt="Papier Boulettes" class="carousel-thumbnail" onclick="openLightbox('papier_boulettes.jpg')">
+                    <img src="papier_frogboy.jpg" alt="Papier Frogboy" class="carousel-thumbnail" onclick="openLightbox('papier_frogboy.jpg')">
+                    <img src="papier_spiderman.jpg" alt="Papier Spiderman" class="carousel-thumbnail" onclick="openLightbox('papier_spiderman.jpg')">
+                </div>
+            </div>
+
+            <!-- Dessins réalisés au Bic -->
+            <div class="carousel-section">
+                <h3>Dessins réalisés au Bic</h3>
+                <div class="carousel">
+                    <img src="bic_pensees_noires.jpg" alt="Bic Pensées Noires" class="carousel-thumbnail" onclick="openLightbox('bic_pensees_noires.jpg')">
+                    <img src="bic_pensees_noires_rouge.jpg" alt="Bic Pensées Noires Rouge" class="carousel-thumbnail" onclick="openLightbox('bic_pensees_noires_rouge.jpg')">
+                </div>
             </div>
         </section>
 
@@ -68,6 +93,6 @@
         <p>© 2024 Portfolio de Lilou - Tous droits réservés</p>
     </footer>
 
-    <script src="/Lil.univers/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
