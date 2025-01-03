@@ -85,18 +85,30 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 15px;
+            justify-items: center;
         }
 
-        .portfolio-grid img {
+        .polaroid {
+            background: white;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 180px;
+        }
+
+        .polaroid img {
             width: 100%;
-            height: auto;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
         }
 
-        .portfolio-grid img:hover {
-            transform: scale(1.05);
+        .polaroid p {
+            margin: 10px 0 0;
+            font-size: 0.9rem;
+            color: #555;
         }
 
         .modal {
@@ -239,33 +251,114 @@
         <section id="portfolio">
             <h2 class="section-title">Mon Portfolio</h2>
             <div class="portfolio-grid">
-                <img src="Dessin 0.jpeg" alt="Dessin 0" data-theme="Portrait de ma maman." data-inspiration="J'ai réalisé ce dessin en 2014 (j'avais 4 ans). Ma mère portait une coupe side cut. J'ai voulu la représenter et j'avais déja, à cette époque, le sens du détail!" data-technique="Archaique : stabilos, feutres et stylo bille">
-                <img src="Dessin 1.jpeg" alt="Dessin 1" data-theme="Thème 1" data-inspiration="Inspiration 1" data-technique="Technique 1">
-                <img src="Dessin 2.jpeg" alt="Dessin 2" data-theme="Thème 2" data-inspiration="Inspiration 2" data-technique="Technique 2">
-                <img src="Dessin 3.jpeg" alt="Dessin 3" data-theme="Thème 3" data-inspiration="Inspiration 3" data-technique="Technique 3">
-                <img src="Dessin 4.jpeg" alt="Dessin 4" data-theme="Thème 4" data-inspiration="Inspiration 4" data-technique="Technique 4">
-                <img src="Dessin 5.jpeg" alt="Dessin 5" data-theme="Thème 5" data-inspiration="Inspiration 5" data-technique="Technique 5">
-                <img src="Dessin 6.jpeg" alt="Dessin 6" data-theme="Thème 6" data-inspiration="Inspiration 6" data-technique="Technique 6">
-                <img src="Dessin 7.jpeg" alt="Dessin 7" data-theme="Thème 7" data-inspiration="Inspiration 7" data-technique="Technique 7">
-                <img src="Dessin 8.jpeg" alt="Dessin 8" data-theme="Thème 8" data-inspiration="Inspiration 8" data-technique="Technique 8">
-                <img src="Dessin 9.jpeg" alt="Dessin 9" data-theme="Thème 9" data-inspiration="Inspiration 9" data-technique="Technique 9">
-                <img src="Dessin 10.jpeg" alt="Dessin 10" data-theme="Thème 10" data-inspiration="Inspiration 10" data-technique="Technique 10">
-                <img src="Dessin 11.jpeg" alt="Dessin 11" data-theme="Thème 11" data-inspiration="Inspiration 11" data-technique="Technique 11">
-                <img src="Dessin 12.jpeg" alt="Dessin 12" data-theme="Thème 12" data-inspiration="Inspiration 12" data-technique="Technique 12">
-                <img src="Dessin 13.jpeg" alt="Dessin 13" data-theme="Thème 13" data-inspiration="Inspiration 13" data-technique="Technique 13">
-                <img src="Dessin 14.jpeg" alt="Dessin 14" data-theme="Thème 14" data-inspiration="Inspiration 14" data-technique="Technique 14">
-                <img src="Dessin 15.jpeg" alt="Dessin 15" data-theme="Thème 15" data-inspiration="Inspiration 15" data-technique="Technique 15">
-                <img src="Dessin 16.jpeg" alt="Dessin 16" data-theme="Thème 16" data-inspiration="Inspiration 16" data-technique="Technique 16">
-                <img src="Dessin 17.jpeg" alt="Dessin 17" data-theme="Thème 17" data-inspiration="Inspiration 17" data-technique="Technique 17">
-                <img src="Dessin 18.jpeg" alt="Dessin 18" data-theme="Thème 18" data-inspiration="Inspiration 18" data-technique="Technique 18">
-                <img src="Dessin 19.jpeg" alt="Dessin 19" data-theme="Thème 19" data-inspiration="Inspiration 19" data-technique="Technique 19">
-                <img src="Dessin 20.jpeg" alt="Dessin 20" data-theme="Thème 20" data-inspiration="Inspiration 20" data-technique="Technique 20">
-                <img src="Dessin 21.jpeg" alt="Dessin 21" data-theme="Thème 21" data-inspiration="Inspiration 21" data-technique="Technique 21">
-                <img src="Dessin 22.jpeg" alt="Dessin 22" data-theme="Thème 22" data-inspiration="Inspiration 22" data-technique="Technique 22">
-                <img src="Dessin 23.jpeg" alt="Dessin 23" data-theme="Thème 23" data-inspiration="Inspiration 23" data-technique="Technique 23">
-                <img src="Dessin 24.jpeg" alt="Dessin 24" data-theme="Thème 24" data-inspiration="Inspiration 24" data-technique="Technique 24">
-                <img src="Dessin 25.jpeg" alt="Dessin 25" data-theme="Thème 25" data-inspiration="Inspiration 25" data-technique="Technique 25">
-                <img src="Dessin 26.jpeg" alt="Dessin 26" data-theme="Thème 26" data-inspiration="Inspiration 26" data-technique="Technique 26">
+                <div class="polaroid" data-theme="Portrait de ma maman." data-inspiration="J'ai réalisé ce dessin en 2014 (j'avais 4 ans). Ma mère portait une coupe side cut. J'ai voulu la représenter et j'avais déja, à cette époque, le sens du détail!" data-technique="Archaique : stabilos, feutres et stylo bille">
+                    <img src="Dessin 0.jpeg" alt="Dessin 0">
+                    <p>2014</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 1" data-inspiration="Inspiration 1" data-technique="Technique 1">
+                    <img src="Dessin 1.jpeg" alt="Dessin 1">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 2" data-inspiration="Inspiration 2" data-technique="Technique 2">
+                    <img src="Dessin 2.jpeg" alt="Dessin 2">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 3" data-inspiration="Inspiration 3" data-technique="Technique 3">
+                    <img src="Dessin 3.jpeg" alt="Dessin 3">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 4" data-inspiration="Inspiration 4" data-technique="Technique 4">
+                    <img src="Dessin 4.jpeg" alt="Dessin 4">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 5" data-inspiration="Inspiration 5" data-technique="Technique 5">
+                    <img src="Dessin 5.jpeg" alt="Dessin 5">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 6" data-inspiration="Inspiration 6" data-technique="Technique 6">
+                    <img src="Dessin 6.jpeg" alt="Dessin 6">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 7" data-inspiration="Inspiration 7" data-technique="Technique 7">
+                    <img src="Dessin 7.jpeg" alt="Dessin 7">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 8" data-inspiration="Inspiration 8" data-technique="Technique 8">
+                    <img src="Dessin 8.jpeg" alt="Dessin 8">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 9" data-inspiration="Inspiration 9" data-technique="Technique 9">
+                    <img src="Dessin 9.jpeg" alt="Dessin 9">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 10" data-inspiration="Inspiration 10" data-technique="Technique 10">
+                    <img src="Dessin 10.jpeg" alt="Dessin 10">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 11" data-inspiration="Inspiration 11" data-technique="Technique 11">
+                    <img src="Dessin 11.jpeg" alt="Dessin 11">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 12" data-inspiration="Inspiration 12" data-technique="Technique 12">
+                    <img src="Dessin 12.jpeg" alt="Dessin 12">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 13" data-inspiration="Inspiration 13" data-technique="Technique 13">
+                    <img src="Dessin 13.jpeg" alt="Dessin 13">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 14" data-inspiration="Inspiration 14" data-technique="Technique 14">
+                    <img src="Dessin 14.jpeg" alt="Dessin 14">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 15" data-inspiration="Inspiration 15" data-technique="Technique 15">
+                    <img src="Dessin 15.jpeg" alt="Dessin 15">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 16" data-inspiration="Inspiration 16" data-technique="Technique 16">
+                    <img src="Dessin 16.jpeg" alt="Dessin 16">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 17" data-inspiration="Inspiration 17" data-technique="Technique 17">
+                    <img src="Dessin 17.jpeg" alt="Dessin 17">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 18" data-inspiration="Inspiration 18" data-technique="Technique 18">
+                    <img src="Dessin 18.jpeg" alt="Dessin 18">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 19" data-inspiration="Inspiration 19" data-technique="Technique 19">
+                    <img src="Dessin 19.jpeg" alt="Dessin 19">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 20" data-inspiration="Inspiration 20" data-technique="Technique 20">
+                    <img src="Dessin 20.jpeg" alt="Dessin 20">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 21" data-inspiration="Inspiration 21" data-technique="Technique 21">
+                    <img src="Dessin 21.jpeg" alt="Dessin 21">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 22" data-inspiration="Inspiration 22" data-technique="Technique 22">
+                    <img src="Dessin 22.jpeg" alt="Dessin 22">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 23" data-inspiration="Inspiration 23" data-technique="Technique 23">
+                    <img src="Dessin 23.jpeg" alt="Dessin 23">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 24" data-inspiration="Inspiration 24" data-technique="Technique 24">
+                    <img src="Dessin 24.jpeg" alt="Dessin 24">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 25" data-inspiration="Inspiration 25" data-technique="Technique 25">
+                    <img src="Dessin 25.jpeg" alt="Dessin 25">
+                    <p>Année</p>
+                </div>
+                <div class="polaroid" data-theme="Thème 26" data-inspiration="Inspiration 26" data-technique="Technique 26">
+                    <img src="Dessin 26.jpeg" alt="Dessin 26">
+                    <p>Année</p>
+                </div>
             </div>
         </section>
 
@@ -322,26 +415,38 @@
     </div>
 
     <script>
-        const images = document.querySelectorAll('.portfolio-grid img');
-        const modal = document.getElementById('modal');
-        const modalImg = modal.querySelector('img');
+        const polaroids = document.querySelectorAll('.polaroid');
+        const modal = document.querySelector('.modal');
+        const modalImage = modal.querySelector('img');
         const modalTheme = document.getElementById('modal-theme');
         const modalInspiration = document.getElementById('modal-inspiration');
         const modalTechnique = document.getElementById('modal-technique');
-        const modalClose = modal.querySelector('.modal-close');
+        const modalClose = document.querySelector('.modal-close');
 
-        images.forEach(image => {
-            image.addEventListener('click', () => {
-                modalImg.src = image.src;
-                modalTheme.textContent = image.dataset.theme;
-                modalInspiration.textContent = image.dataset.inspiration;
-                modalTechnique.textContent = image.dataset.technique;
+        polaroids.forEach(polaroid => {
+            polaroid.addEventListener('click', () => {
+                const theme = polaroid.getAttribute('data-theme');
+                const inspiration = polaroid.getAttribute('data-inspiration');
+                const technique = polaroid.getAttribute('data-technique');
+                const imageSrc = polaroid.querySelector('img').src;
+
+                modalTheme.textContent = theme;
+                modalInspiration.textContent = inspiration;
+                modalTechnique.textContent = technique;
+                modalImage.src = imageSrc;
+
                 modal.style.display = 'flex';
             });
         });
 
         modalClose.addEventListener('click', () => {
             modal.style.display = 'none';
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
         });
     </script>
     <script>
