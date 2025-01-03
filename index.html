@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio de Lilou Savry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            background-color: #f8f9fa;
+            display: flex;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 70px;
+            height: 100vh;
+            background: linear-gradient(135deg, #ece5f3, #73777e);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar a {
+            text-decoration: none;
+            color: white;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .sidebar a img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .sidebar a:hover {
+            opacity: 0.8;
+        }
+
+        main {
+            margin-left: 70px;
+            width: 100%;
+        }
+
+        header {
+            position: relative;
+            text-align: center;
+            background: linear-gradient(135deg, #ece5f3, #73777e);
+            color: white;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        section {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+            font-size: 2.5rem;
+            color: #6a11cb;
+            margin-bottom: 30px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .portfolio-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .portfolio-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .modal-content h3 {
+            margin: 10px 0;
+            font-size: 1.5rem;
+            color: #6a11cb;
+        }
+
+        .modal-content p {
+            font-size: 1rem;
+            margin: 5px 0;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .carousel {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-inner {
+            display: flex;
+            gap: 10px;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            flex: 0 0 auto;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .carousel-item img {
+            width: auto;
+            height: 200px;
+            border-radius: 10px;
+            opacity: 0.6;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .carousel-item.active img {
+            width: auto;
+            opacity: 1;
+            transform: scale(1.2);
+        }
+
+        .carousel .btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .carousel .btn-prev {
+            left: 10px;
+        }
+
+        .carousel .btn-next {
+            right: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ffa500;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="#portfolio">
+            <img src="logo_portfolio.jpg" alt="Portfolio">
+        </a>
+        <a href="#about">
+            <img src="a_propos_de_lilou.jpg" alt="À propos de moi">
+        </a>
+        <a href="#art-style">
+            <img src="style_lilou.jpg" alt="À propos de mon art">
+        </a>
+    </div>
+
+    <main>
+        <header>
+            <h1>Lilou Savry</h1>
+            <p>Exploration graphique et créativité sans limites</p>
+        </header>
+
+        <section id="portfolio">
+            <h2 class="section-title">Mon Portfolio</h2>
+            <div class="portfolio-grid">
+                <img src="Dessin 0.jpeg" alt="Dessin 0" data-theme="Portrait de ma maman." data-inspiration="J'ai réalisé ce dessin en 2014 (j'avais 4 ans). Ma mère portait une coupe side cut. J'ai voulu la représenter et j'avais déja, à cette époque, le sens du détail!" data-technique="Archaique : stabilos, feutres et stylo bille">
+                <img src="Dessin 1.jpeg" alt="Dessin 1" data-theme="Thème 1" data-inspiration="Inspiration 1" data-technique="Technique 1">
+                <img src="Dessin 2.jpeg" alt="Dessin 2" data-theme="Thème 2" data-inspiration="Inspiration 2" data-technique="Technique 2">
+                <img src="Dessin 3.jpeg" alt="Dessin 3" data-theme="Thème 3" data-inspiration="Inspiration 3" data-technique="Technique 3">
+                <img src="Dessin 4.jpeg" alt="Dessin 4" data-theme="Thème 4" data-inspiration="Inspiration 4" data-technique="Technique 4">
+                <img src="Dessin 5.jpeg" alt="Dessin 5" data-theme="Thème 5" data-inspiration="Inspiration 5" data-technique="Technique 5">
+                <img src="Dessin 6.jpeg" alt="Dessin 6" data-theme="Thème 6" data-inspiration="Inspiration 6" data-technique="Technique 6">
+                <img src="Dessin 7.jpeg" alt="Dessin 7" data-theme="Thème 7" data-inspiration="Inspiration 7" data-technique="Technique 7">
+                <img src="Dessin 8.jpeg" alt="Dessin 8" data-theme="Thème 8" data-inspiration="Inspiration 8" data-technique="Technique 8">
+                <img src="Dessin 9.jpeg" alt="Dessin 9" data-theme="Thème 9" data-inspiration="Inspiration 9" data-technique="Technique 9">
+                <img src="Dessin 10.jpeg" alt="Dessin 10" data-theme="Thème 10" data-inspiration="Inspiration 10" data-technique="Technique 10">
+                <img src="Dessin 11.jpeg" alt="Dessin 11" data-theme="Thème 11" data-inspiration="Inspiration 11" data-technique="Technique 11">
+                <img src="Dessin 12.jpeg" alt="Dessin 12" data-theme="Thème 12" data-inspiration="Inspiration 12" data-technique="Technique 12">
+                <img src="Dessin 13.jpeg" alt="Dessin 13" data-theme="Thème 13" data-inspiration="Inspiration 13" data-technique="Technique 13">
+                <img src="Dessin 14.jpeg" alt="Dessin 14" data-theme="Thème 14" data-inspiration="Inspiration 14" data-technique="Technique 14">
+                <img src="Dessin 15.jpeg" alt="Dessin 15" data-theme="Thème 15" data-inspiration="Inspiration 15" data-technique="Technique 15">
+                <img src="Dessin 16.jpeg" alt="Dessin 16" data-theme="Thème 16" data-inspiration="Inspiration 16" data-technique="Technique 16">
+                <img src="Dessin 17.jpeg" alt="Dessin 17" data-theme="Thème 17" data-inspiration="Inspiration 17" data-technique="Technique 17">
+                <img src="Dessin 18.jpeg" alt="Dessin 18" data-theme="Thème 18" data-inspiration="Inspiration 18" data-technique="Technique 18">
+                <img src="Dessin 19.jpeg" alt="Dessin 19" data-theme="Thème 19" data-inspiration="Inspiration 19" data-technique="Technique 19">
+                <img src="Dessin 20.jpeg" alt="Dessin 20" data-theme="Thème 20" data-inspiration="Inspiration 20" data-technique="Technique 20">
+                <img src="Dessin 21.jpeg" alt="Dessin 21" data-theme="Thème 21" data-inspiration="Inspiration 21" data-technique="Technique 21">
+                <img src="Dessin 22.jpeg" alt="Dessin 22" data-theme="Thème 22" data-inspiration="Inspiration 22" data-technique="Technique 22">
+                <img src="Dessin 23.jpeg" alt="Dessin 23" data-theme="Thème 23" data-inspiration="Inspiration 23" data-technique="Technique 23">
+                <img src="Dessin 24.jpeg" alt="Dessin 24" data-theme="Thème 24" data-inspiration="Inspiration 24" data-technique="Technique 24">
+                <img src="Dessin 25.jpeg" alt="Dessin 25" data-theme="Thème 25" data-inspiration="Inspiration 25" data-technique="Technique 25">
+                <img src="Dessin 26.jpeg" alt="Dessin 26" data-theme="Thème 26" data-inspiration="Inspiration 26" data-technique="Technique 26">
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 class="section-title">À propos de Lilou</h2>
+            <div class="carousel">
+                <button class="btn btn-prev">&#8249;</button>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="Lilou 1.jpeg" alt="Lilou 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Lilou 2.jpeg" alt="Lilou 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Lilou 3.jpeg" alt="Lilou 3">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Lilou 4.jpg" alt="Lilou 4">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Lilou 5.jpg" alt="Lilou 5">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Lilou 6.jpg" alt="Lilou 6">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Lilou 7.jpg" alt="Lilou 7">
+                    </div>
+                </div>
+                <button class="btn btn-next">&#8250;</button>
+            </div>
+        </section>
+
+        <section id="art-style">
+            <h2 class="section-title">À propos de mon art</h2>
+            <p class="about">
+                Mon style artistique est un mélange vibrant de créativité, d’émotion et d’exploration constante. Je puise mon inspiration dans les univers variés de la culture populaire, des mangas, et des séries qui me passionnent, tout en y ajoutant ma propre touche personnelle.
+            </p>
+        </section>
+
+        <footer>
+            &copy; 2025 Lilou Savry. Tous droits réservés. <a href="#">Mentions légales</a>
+        </footer>
+    </main>
+    <div class="modal" id="modal">
+        <button class="modal-close">&times;</button>
+        <div class="modal-content">
+            <img src="" alt="Détail de l'image">
+            <h3 id="modal-theme">Thème</h3>
+            <p><strong>Inspiration :</strong> <span id="modal-inspiration"></span></p>
+            <p><strong>Technique :</strong> <span id="modal-technique"></span></p>
+        </div>
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.portfolio-grid img');
+        const modal = document.getElementById('modal');
+        const modalImg = modal.querySelector('img');
+        const modalTheme = document.getElementById('modal-theme');
+        const modalInspiration = document.getElementById('modal-inspiration');
+        const modalTechnique = document.getElementById('modal-technique');
+        const modalClose = modal.querySelector('.modal-close');
+
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                modalImg.src = image.src;
+                modalTheme.textContent = image.dataset.theme;
+                modalInspiration.textContent = image.dataset.inspiration;
+                modalTechnique.textContent = image.dataset.technique;
+                modal.style.display = 'flex';
+            });
+        });
+
+        modalClose.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+    </script>
+    <script>
+        const prevBtnAbout = document.querySelector('.btn-prev');
+        const nextBtnAbout = document.querySelector('.btn-next');
+        const carouselItems = document.querySelectorAll('.carousel-item');
+        let currentIndexAbout = 0;
+
+        function updateCarousel() {
+            carouselItems.forEach((item, index) => {
+                item.classList.remove('active');
+                if (index === currentIndexAbout) {
+                    item.classList.add('active');
+                }
+            });
+        }
+
+        prevBtnAbout.addEventListener('click', () => {
+            currentIndexAbout = (currentIndexAbout > 0) ? currentIndexAbout - 1 : carouselItems.length - 1;
+            updateCarousel();
+        });
+
+        nextBtnAbout.addEventListener('click', () => {
+            currentIndexAbout = (currentIndexAbout < carouselItems.length - 1) ? currentIndexAbout + 1 : 0;
+            updateCarousel();
+        });
+
+        updateCarousel();
+    </script>
+</body>
+</html>
