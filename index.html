@@ -4,90 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio de Lilou Savry</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600&family=Roboto:wght@300;400&family=Mrs+Saint+Delafield&family=Mr+Bedfort&display=swap" rel="stylesheet">
     <style>
+        /* Global Styles */
+        
         body {
             margin: 0;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Mr Bedfort', serif;
             color: #333;
-            background-color: #f8f9fa;
-            display: flex;
+            background: url('background.jpeg') center/cover no-repeat; /* Image d'arrière-plan */
+            background-attachment: fixed; /* Fixe pour ne pas défiler */
+            position: relative;
         }
 
+        /* Overlay pour rendre les contenus bien lisibles */
+        .background-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.5); /* Couleur blanche semi-transparente */
+            z-index: 1;
+        }
+
+        main {
+            position: relative;
+            margin-left: 70px;
+            padding: 20px;
+            width: calc(100% - 70px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 2; /* Pour s'assurer que le contenu est au-dessus de l'overlay */
+        }
+
+        /* Sidebar */
         .sidebar {
             position: fixed;
             top: 0;
             left: 0;
             width: 70px;
             height: 100vh;
-            background: linear-gradient(135deg, #ece5f3, #73777e);
+            background: linear-gradient(135deg, #ffcccb, #ffdab9, #b0e0e6, #add8e6);
             display: flex;
             flex-direction: column;
             align-items: center;
             padding: 20px 0;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            z-index: 3; /* Assurez-vous que la barre latérale est au-dessus de l'overlay */
         }
-
+    
         .sidebar a {
             text-decoration: none;
             color: white;
             margin: 20px 0;
             text-align: center;
         }
-
+    
         .sidebar a img {
             width: 40px;
             height: 40px;
         }
-
+    
         .sidebar a:hover {
             opacity: 0.8;
         }
-
+    
+        /* Main Content */
         main {
             margin-left: 70px;
             width: 100%;
         }
-
+    
+        /* Header */
         header {
             position: relative;
             text-align: center;
-            background: linear-gradient(135deg, #ece5f3, #73777e);
-            color: white;
             padding: 50px 20px;
+            color: #333;
+            background: linear-gradient(to right, #ffcccb, #ffdab9, #f0e68c, #b0e0e6, #add8e6);
+            background-size: 200% 200%;
+            animation: gradientMove 6s ease infinite;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
-
+    
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    
         header h1 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 3rem;
+            font-family: 'Mrs Saint Delafield', cursive;
+            font-size: 3.5rem;
+            margin: 0;
+            color: #333;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
         }
-
+    
         header p {
-            font-size: 1.2rem;
+            font-family: 'Mr Bedfort', serif;
+            font-size: 1.5rem;
             margin-top: 10px;
+            color: #555;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
         }
-
-        section {
-            padding: 50px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
+    
+        /* Section Titles */
         .section-title {
-            font-family: 'Dancing Script', cursive;
+            font-family: 'Mrs Saint Delafield', cursive;
             text-align: center;
             font-size: 2.5rem;
             color: #6a11cb;
             margin-bottom: 30px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
         }
-
+    
+        /* Portfolio Grid */
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 15px;
             justify-items: center;
         }
-
+    
         .polaroid {
             background: white;
             padding: 10px;
@@ -96,21 +137,27 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
             width: 180px;
+            transition: transform 0.3s ease;
         }
-
+    
+        .polaroid:hover {
+            transform: scale(1.05);
+        }
+    
         .polaroid img {
             width: 100%;
             height: 150px;
             object-fit: cover;
             border-radius: 5px;
         }
-
+    
         .polaroid p {
             margin: 10px 0 0;
             font-size: 0.9rem;
             color: #555;
         }
-
+    
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -123,32 +170,36 @@
             align-items: center;
             z-index: 1000;
         }
-
+    
         .modal-content {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
             background: white;
             padding: 20px;
             border-radius: 10px;
-            max-width: 500px;
-            text-align: center;
+            max-width: 800px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-
+    
         .modal-content img {
-            width: 100%;
-            height: auto;
+            width: 50%;
             border-radius: 10px;
+            margin-right: 20px;
         }
-
+    
         .modal-content h3 {
-            margin: 10px 0;
-            font-size: 1.5rem;
+            font-family: 'Mrs Saint Delafield', cursive;
             color: #6a11cb;
+            margin-bottom: 10px;
         }
-
+    
         .modal-content p {
+            font-family: 'Mr Bedfort', serif;
             font-size: 1rem;
-            margin: 5px 0;
+            color: #555;
         }
-
+    
         .modal-close {
             position: absolute;
             top: 10px;
@@ -159,58 +210,59 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
-        .carousel {
+    
+        .modal-close:hover {
+            color: #ffcccb;
+        }
+
+        /* Styles de la bannière défilante */
+        .banner {
             position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            background: #f8f9fa;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
         }
 
-        .carousel-inner {
-            display: flex;
-            gap: 10px;
-            transition: transform 0.5s ease;
-        }
+    .banner-images {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: calc(100% * 5); /* Ajustez le multiplicateur au nombre de photos */
+    }
 
-        .carousel-item {
-            flex: 0 0 auto;
-            transition: transform 0.5s ease, opacity 0.5s ease;
-        }
+    .banner-images img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-        .carousel-item img {
-            width: auto;
-            height: 200px;
-            border-radius: 10px;
-            opacity: 0.6;
-            transition: transform 0.5s ease, opacity 0.5s ease;
-        }
+    .banner .controls {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        z-index: 2;
+    }
 
-        .carousel-item.active img {
-            width: auto;
-            opacity: 1;
-            transform: scale(1.2);
-        }
+    .banner .controls button {
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
 
-        .carousel .btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            z-index: 2;
-        }
+    .banner .controls button:hover {
+        background: rgba(0, 0, 0, 0.8);
+    }
 
-        .carousel .btn-prev {
-            left: 10px;
-        }
-
-        .carousel .btn-next {
-            right: 10px;
-        }
-
+        /* Footer */
         footer {
             text-align: center;
             padding: 20px;
@@ -218,27 +270,31 @@
             color: white;
             font-size: 0.9rem;
         }
-
+    
         footer a {
             color: #ffa500;
             text-decoration: none;
         }
-
+    
         footer a:hover {
             text-decoration: underline;
         }
     </style>
-</head>
+    
 <body>
+    <div class="background-overlay"></div>
     <div class="sidebar">
         <a href="#portfolio">
             <img src="logo_portfolio.jpg" alt="Portfolio">
+            <span>Portfolio</span>
         </a>
         <a href="#about">
-            <img src="a_propos_de_lilou.jpg" alt="À propos de moi">
+            <img src="a_propos_de_lilou.jpg" alt="À propos de Lilou">
+            <span>À propos</span>
         </a>
         <a href="#art-style">
             <img src="style_lilou.jpg" alt="À propos de mon art">
+            <span>Mon Art</span>
         </a>
     </div>
 
@@ -361,34 +417,22 @@
 
         <section id="about">
             <h2 class="section-title">À propos de Lilou</h2>
-            <div class="carousel">
-                <button class="btn btn-prev">&#8249;</button>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="Lilou 1.jpeg" alt="Lilou 1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="Lilou 2.jpeg" alt="Lilou 2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="Lilou 3.jpeg" alt="Lilou 3">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="Lilou 4.jpg" alt="Lilou 4">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="Lilou 5.jpg" alt="Lilou 5">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="Lilou 6.jpg" alt="Lilou 6">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="Lilou 7.jpg" alt="Lilou 7">
-                    </div>
+            <div class="banner">
+                <div class="banner-images">
+                    <img src="Lilou1.jpg" alt="Image 1">
+                    <img src="Lilou2.jpg" alt="Image 2">
+                    <img src="Lilou3.jpg" alt="Image 3">
+                    <img src="Lilou4.jpg" alt="Image 4">
+                    <img src="Lilou5.jpg" alt="Image 5">
                 </div>
-                <button class="btn btn-next">&#8250;</button>
+                <div class="controls">
+                    <button class="prev">&#8249;</button>
+                    <button class="next">&#8250;</button>
+                </div>
             </div>
-            <p> Je m'appelle Lilou Savry, j'ai 15 ans, et le dessin est pour moi un moyen d'exprimer mon univers intérieur et ma créativité débordante. Depuis toute petite, je crée des personnages et des histoires qui reflètent des mondes variés, passant du ludique au plus introspectif. Mon style, influencé par l’univers manga, mêle originalité, expressivité et une grande maîtrise des couleurs.
+            
+            <p style="text-align: justify;">
+                Je m'appelle Lilou Savry, j'ai 15 ans, et le dessin est pour moi un moyen d'exprimer mon univers intérieur et ma créativité débordante. Depuis toute petite, je crée des personnages et des histoires qui reflètent des mondes variés, passant du ludique au plus introspectif. Mon style, influencé par l’univers manga, mêle originalité, expressivité et une grande maîtrise des couleurs.
                 J’aime expérimenter différentes techniques artistiques : feutres à alcool, aquarelle, peinture acrylique, marqueurs Posca, et dessin numérique sur Procreate. Une de mes signatures est ma passion pour les dégradés, qui ajoutent fluidité et profondeur à mes créations. J’aime jouer avec les nuances pour donner vie à des personnages qui captent l’attention par leur personnalité et leur design soigné. Par exemple, mes portraits mêlent détails subtils et jeux de lumières, tandis que mes compositions humoristiques montrent mon goût pour les concepts originaux, comme des soldats-patates ou des personnages anthropomorphes.
                 Mes dessins témoignent d’une grande polyvalence : des super-héroïnes modernes, des portraits au style épuré, ou encore des illustrations qui mettent en avant la joie et la complicité entre personnages. Ce que je cherche avant tout, c’est raconter des histoires, transmettre des émotions, et faire passer des messages importants, comme l’inclusion et la tolérance.
                 Rejoindre le Bac Pro Communication Visuelle Pluri Médias serait une chance incroyable pour moi. J’ai envie d’approfondir mes compétences, d’enrichir mon univers artistique et de continuer à explorer toutes les possibilités qu’offrent les arts visuels. Je suis prête à travailler dur pour faire de ma passion un métier et continuer à donner vie à mes idées.</p>
@@ -396,13 +440,13 @@
 
         <section id="art-style">
             <h2 class="section-title">À propos de mon art</h2>
-            <p class="about">
-                Mon style artistique est un mélange vibrant de créativité, d’émotion et d’exploration constante. Je puise mon inspiration dans les univers variés de la culture populaire, des mangas, et des séries qui me passionnent, tout en y ajoutant ma propre touche personnelle. Mon art se caractérise par des personnages expressifs, souvent porteurs de récits implicites, et des jeux de couleurs marqués, où les dégradés et les contrastes prennent une place importante.
-
-J’aime expérimenter avec différentes techniques comme l’aquarelle, la peinture acrylique, le posca, les feutres à alcool, et le dessin numérique sur Procreate. Chaque support me permet d’exprimer une facette différente de mon imagination. J’adore créer des designs originaux qui fusionnent mode, symbolisme et émotions, tout en revisitant des personnages que j’aime pour leur donner une nouvelle vie, souvent à travers une perspective moderne et stylisée.
-
-Mon univers artistique est également empreint d’une réflexion sur les dualités de la vie : l’amour et la haine, le mignon et l’effrayant, le réel et l’imaginaire. Depuis toute petite, j’ai nourri mon monde intérieur avec des histoires et des amis imaginaires, et cet héritage se ressent dans mes créations qui invitent toujours à explorer au-delà de la surface. Mon but, à travers mon art, est de toucher les gens et de leur rappeler que chacun est unique, et que la diversité, sous toutes ses formes, est une force.
+                <div>
+                    <p style="text-align: justify;">
+                Mon style artistique est un mélange vibrant de créativité, d’émotion et d’exploration constante. Je puise mon inspiration dans les univers variés de la culture populaire, des mangas, et des séries qui me passionnent, tout en y ajoutant ma propre touche personnelle. Mon art se caractérise par des personnages expressifs, souvent porteurs de récits implicites, et des jeux de couleurs marqués, où les dégradés et les contrastes prennent une place importante.  
+                J’aime expérimenter avec différentes techniques comme l’aquarelle, la peinture acrylique, le posca, les feutres à alcool, et le dessin numérique sur Procreate. Chaque support me permet d’exprimer une facette différente de mon imagination. J’adore créer des designs originaux qui fusionnent mode, symbolisme et émotions, tout en revisitant des personnages que j’aime pour leur donner une nouvelle vie, souvent à travers une perspective moderne et stylisée.
+                Mon univers artistique est aussi empreint d’une réflexion sur les dualités de la vie : l’amour et la haine, le mignon et l’effrayant, le réel et l’imaginaire. Depuis toute petite, j’ai nourri mon monde intérieur avec des histoires et des amis imaginaires, et cet héritage se ressent dans mes créations qui invitent toujours à explorer au-delà de la surface. Mon but, à travers mon art, est de toucher les gens et de leur rappeler que chacun est unique, et que la diversité, sous toutes ses formes, est une force.
             </p>
+            </div>
         </section>
 
         <footer>
@@ -455,31 +499,48 @@ Mon univers artistique est également empreint d’une réflexion sur les dualit
         });
     </script>
     <script>
-        const prevBtnAbout = document.querySelector('.btn-prev');
-        const nextBtnAbout = document.querySelector('.btn-next');
-        const carouselItems = document.querySelectorAll('.carousel-item');
-        let currentIndexAbout = 0;
+        // Sélection des éléments de la bannière
+        const banner = document.querySelector('.banner-images');
+        const images = document.querySelectorAll('.banner-images img');
+        const prevButton = document.querySelector('.prev');
+        const nextButton = document.querySelector('.next');
+        let currentIndex = 0;
 
-        function updateCarousel() {
-            carouselItems.forEach((item, index) => {
-                item.classList.remove('active');
-                if (index === currentIndexAbout) {
-                    item.classList.add('active');
-                }
-            });
+        // Fonction pour mettre à jour l'affichage de la bannière
+        function updateBanner() {
+            // Calcul de la largeur de chaque image
+            const width = banner.offsetWidth / images.length;
+            // Déplacement de la bannière en fonction de l'index actuel
+            banner.style.transform = `translateX(-${currentIndex * width}px)`;
         }
 
-        prevBtnAbout.addEventListener('click', () => {
-            currentIndexAbout = (currentIndexAbout > 0) ? currentIndexAbout - 1 : carouselItems.length - 1;
-            updateCarousel();
+        // Défilement à droite
+        nextButton.addEventListener('click', () => {
+            // Incrémentation de l'index actuel
+            currentIndex = (currentIndex + 1) % images.length;
+            // Mise à jour de l'affichage de la bannière
+            updateBanner();
         });
 
-        nextBtnAbout.addEventListener('click', () => {
-            currentIndexAbout = (currentIndexAbout < carouselItems.length - 1) ? currentIndexAbout + 1 : 0;
-            updateCarousel();
+        // Défilement à gauche
+        prevButton.addEventListener('click', () => {
+            // Décrémentation de l'index actuel
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            // Mise à jour de l'affichage de la bannière
+            updateBanner();
         });
 
-        updateCarousel();
+        // Défilement automatique toutes les 5 secondes
+        setInterval(() => {
+            // Incrémentation de l'index actuel
+            currentIndex = (currentIndex + 1) % images.length;
+            // Mise à jour de l'affichage de la bannière
+            updateBanner();
+        }, 5000);
+
+        // Initialisation de la bannière
+        updateBanner();
     </script>
+    
 </body>
 </html>

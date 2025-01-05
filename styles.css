@@ -1,63 +1,69 @@
-/* Global Styles */
-body {
-    font-family: 'Roboto', sans-serif;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background: #f8f9fa;
-}
-
-/* Header */
 header {
-    background: linear-gradient(to right, #6a11cb, #2575fc); /* Dégradé moderne */
-    color: white;
-    padding: 20px 0;
+    position: relative;
     text-align: center;
+    padding: 50px 20px;
+    color: #333;
+    background: linear-gradient(to right, #ffcccb, #ffdab9, #f0e68c, #b0e0e6, #add8e6);
+    background-size: 200% 200%; /* Effet de mouvement */
+    animation: gradientMove 6s ease infinite;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
+/* Animation pour simuler un mouvement dans le dégradé */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Texture "dessin au feutre" */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 20%, transparent 80%);
+    opacity: 0.5;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Style des titres */
 header h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 3rem;
+    position: relative;
+    font-family: 'Mrs Saint Delafield', cursive;
+    font-size: 3.5rem;
     margin: 0;
+    z-index: 2;
+    color: #333;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Légère ombre */
 }
 
-header h2 {
-    font-family: 'Pacifico', cursive;
+header p {
+    position: relative;
+    font-family: 'Mr Bedfort', serif;
     font-size: 1.5rem;
     margin-top: 10px;
+    z-index: 2;
+    color: #555;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* Section About */
-section {
-    padding: 40px 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-section h2 {
-    font-family: 'Montserrat', sans-serif;
-    color: #6a11cb;
-    border-bottom: 2px solid #2575fc;
-    padding-bottom: 5px;
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
-section p {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    color: #444;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #333;
-    color: white;
-    font-family: 'Nunito Sans', sans-serif;
+/* Ajout d'effets de "tache" */
+header::after {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255, 182, 193, 0.15), rgba(240, 128, 128, 0.05));
+    top: -10%;
+    left: -25%;
+    transform: rotate(45deg);
+    z-index: 0;
+    mix-blend-mode: multiply;
+    pointer-events: none;
 }
