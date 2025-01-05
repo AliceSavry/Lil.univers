@@ -10,7 +10,7 @@
         
         body {
             margin: 0;
-            font-family: 'Mr Bedfort', serif;
+            font-family: 'Verdana', sans-serif;
             color: #333;
             background: url('background.jpeg') center/cover no-repeat; /* Image d'arrière-plan */
             background-attachment: fixed; /* Fixe pour ne pas défiler */
@@ -104,7 +104,7 @@
         }
     
         header p {
-            font-family: 'Mr Bedfort', serif;
+            font-family: 'Verdana', sans-serif;
             font-size: 1.5rem;
             margin-top: 10px;
             color: #555;
@@ -152,6 +152,7 @@
         }
     
         .polaroid p {
+            font-family: 'Verdana', sans-serif;
             margin: 10px 0 0;
             font-size: 0.9rem;
             color: #555;
@@ -195,7 +196,7 @@
         }
     
         .modal-content p {
-            font-family: 'Mr Bedfort', serif;
+            font-family: 'Verdana', sans-serif;
             font-size: 1rem;
             color: #555;
         }
@@ -219,48 +220,75 @@
         .banner {
             position: relative;
             width: 100%;
-            height: 300px;
+            height: 300px; /* Hauteur fixe pour la bannière */
             overflow: hidden;
             background: #f8f9fa;
+        }
+    
+        .banner-images {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            width: calc(100% * 7); /* Ajustez ce chiffre au nombre d'images */
+            transition: transform 0.5s ease-in-out;
+        }
+    
+        .banner-images img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Permet d'ajuster l'image à l'espace disponible sans rognage */
+            flex-shrink: 0;
+        }
+    
+        .banner .controls {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            z-index: 2;
+        }
+    
+        .banner .controls button {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+    
+        .banner .controls button:hover {
+            background: rgba(0, 0, 0, 0.8);
         }
 
-    .banner-images {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-        width: calc(100% * 5); /* Ajustez le multiplicateur au nombre de photos */
-    }
 
-    .banner-images img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
 
-    .banner .controls {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        z-index: 2;
-    }
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            main {
+                margin-left: 0;
+                width: 100%;
+            }
+            .sidebar {
+                width: 50px;
+            }
+            .sidebar a img {
+                width: 30px;
+                height: 30px;
+            }
+        }
 
-    .banner .controls button {
-        background: rgba(0, 0, 0, 0.5);
-        color: white;
-        border: none;
-        padding: 10px;
-        font-size: 1.5rem;
-        cursor: pointer;
-    }
-
-    .banner .controls button:hover {
-        background: rgba(0, 0, 0, 0.8);
-    }
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            header p {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
 
         /* Footer */
         footer {
@@ -419,11 +447,13 @@
             <h2 class="section-title">À propos de Lilou</h2>
             <div class="banner">
                 <div class="banner-images">
-                    <img src="Lilou1.jpg" alt="Image 1">
-                    <img src="Lilou2.jpg" alt="Image 2">
-                    <img src="Lilou3.jpg" alt="Image 3">
-                    <img src="Lilou4.jpg" alt="Image 4">
-                    <img src="Lilou5.jpg" alt="Image 5">
+                    <img src="Lilou 1.jpg" alt="Image 1">
+                    <img src="Lilou 2.jpg" alt="Image 2">
+                    <img src="Lilou 3.jpg" alt="Image 3">
+                    <img src="Lilou 4.jpg" alt="Image 4">
+                    <img src="Lilou 5.jpg" alt="Image 5">
+                    <img src="Lilou 6.jpg" alt="Image 6">
+                    <img src="Lilou 7.jpg" alt="Image 7">
                 </div>
                 <div class="controls">
                     <button class="prev">&#8249;</button>
@@ -431,7 +461,7 @@
                 </div>
             </div>
             
-            <p style="text-align: justify;">
+            <p style="text-align: justify; font-family: 'Verdana', sans-serif;">
                 Je m'appelle Lilou Savry, j'ai 15 ans, et le dessin est pour moi un moyen d'exprimer mon univers intérieur et ma créativité débordante. Depuis toute petite, je crée des personnages et des histoires qui reflètent des mondes variés, passant du ludique au plus introspectif. Mon style, influencé par l’univers manga, mêle originalité, expressivité et une grande maîtrise des couleurs.
                 J’aime expérimenter différentes techniques artistiques : feutres à alcool, aquarelle, peinture acrylique, marqueurs Posca, et dessin numérique sur Procreate. Une de mes signatures est ma passion pour les dégradés, qui ajoutent fluidité et profondeur à mes créations. J’aime jouer avec les nuances pour donner vie à des personnages qui captent l’attention par leur personnalité et leur design soigné. Par exemple, mes portraits mêlent détails subtils et jeux de lumières, tandis que mes compositions humoristiques montrent mon goût pour les concepts originaux, comme des soldats-patates ou des personnages anthropomorphes.
                 Mes dessins témoignent d’une grande polyvalence : des super-héroïnes modernes, des portraits au style épuré, ou encore des illustrations qui mettent en avant la joie et la complicité entre personnages. Ce que je cherche avant tout, c’est raconter des histoires, transmettre des émotions, et faire passer des messages importants, comme l’inclusion et la tolérance.
@@ -441,7 +471,7 @@
         <section id="art-style">
             <h2 class="section-title">À propos de mon art</h2>
                 <div>
-                    <p style="text-align: justify;">
+                    <p style="text-align: justify; font-family: 'Verdana', sans-serif;">
                 Mon style artistique est un mélange vibrant de créativité, d’émotion et d’exploration constante. Je puise mon inspiration dans les univers variés de la culture populaire, des mangas, et des séries qui me passionnent, tout en y ajoutant ma propre touche personnelle. Mon art se caractérise par des personnages expressifs, souvent porteurs de récits implicites, et des jeux de couleurs marqués, où les dégradés et les contrastes prennent une place importante.  
                 J’aime expérimenter avec différentes techniques comme l’aquarelle, la peinture acrylique, le posca, les feutres à alcool, et le dessin numérique sur Procreate. Chaque support me permet d’exprimer une facette différente de mon imagination. J’adore créer des designs originaux qui fusionnent mode, symbolisme et émotions, tout en revisitant des personnages que j’aime pour leur donner une nouvelle vie, souvent à travers une perspective moderne et stylisée.
                 Mon univers artistique est aussi empreint d’une réflexion sur les dualités de la vie : l’amour et la haine, le mignon et l’effrayant, le réel et l’imaginaire. Depuis toute petite, j’ai nourri mon monde intérieur avec des histoires et des amis imaginaires, et cet héritage se ressent dans mes créations qui invitent toujours à explorer au-delà de la surface. Mon but, à travers mon art, est de toucher les gens et de leur rappeler que chacun est unique, et que la diversité, sous toutes ses formes, est une force.
